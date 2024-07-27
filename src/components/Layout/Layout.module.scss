@@ -1,0 +1,36 @@
+@import '../../styles';
+
+.wrapper {
+  @extend %extends-hide-scrollbar;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  overflow-y: scroll;
+
+  .layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100svh;
+
+    > header {
+      .headerContent {
+        height: 100px;
+      }
+    }
+
+    > main {
+      .mainContent {
+      }
+    }
+
+    > footer {
+      .footerContent {
+        height: 100px;
+      }
+    }
+  }
+}
+
+// font-size: calc(10px + 2vmin);
