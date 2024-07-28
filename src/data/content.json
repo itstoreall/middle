@@ -1,0 +1,13 @@
+{
+  "content": {
+    "header": {
+      "logo": "middle"
+    },
+    "main": {
+      "label": "main"
+    },
+    "footer": {
+      "label": "footer"
+    }
+  }
+}

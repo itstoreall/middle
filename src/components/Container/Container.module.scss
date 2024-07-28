@@ -1,0 +1,26 @@
+@import '../../styles';
+
+// ------ PAGE:
+
+.pageContainer {
+  &.page {
+    display: flex;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: $desktop;
+
+    @include media-screen-orientation('min', $tablet) {
+      padding: 0 20px;
+    }
+
+    @include media-screen-orientation('min', $desktop + 40) {
+      padding: 0;
+    }
+  }
+}
+
+// ------ General Container:
+
+.container {
+  @extend .pageContainer;
+}
