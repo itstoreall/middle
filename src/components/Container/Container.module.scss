@@ -4,6 +4,7 @@
 
 .pageContainer {
   &.page {
+    position: relative;
     display: flex;
     padding: 0 15px;
     margin: 0 auto;

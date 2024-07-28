@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom/client';
 import './styles/_reset.scss';
 import './styles/_global.scss';
-import Layout from './components/Layout';
+import AppRoutes from './routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-root.render(<Layout />);
+root.render(<AppRoutes />);

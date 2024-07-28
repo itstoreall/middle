@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import { LayoutProps } from './types';
 import content from '../../data';
 import Container, { containerEnum } from '../Container';
+import NavButton from '../NavButton';
 import s from './Layout.module.scss';
 
 const { Label } = containerEnum;
@@ -19,14 +21,14 @@ const Layout = () => {
       <div className={s.layout}>
         <header>
           <Container label={Label.PAGE}>
+            <NavButton />
+
             <div className={s.headerContent}>{'Logo'}</div>
           </Container>
         </header>
 
         <main>
-          <Container label={Label.PAGE}>
-            <div className={s.mainContent}>Main</div>
-          </Container>
+          <Outlet />
         </main>
 
         <footer>
