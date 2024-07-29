@@ -1,10 +1,10 @@
-const resume = 'resume';
-const portfolio = 'portfolio';
+const resumeLabel = 'resume';
+const portfolioLabel = 'portfolio';
 
 const resumePath = '/';
-const portfolioPath = `/${portfolio}`;
+const portfolioPath = `/${portfolioLabel}`;
 
 export const page = {
-  resume: { path: resumePath, label: resume },
-  portfolio: { path: portfolioPath, label: portfolio }
+  resume: { path: resumePath, label: resumeLabel },
+  portfolio: { path: portfolioPath, label: portfolioLabel }
 };

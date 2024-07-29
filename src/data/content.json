@@ -1,13 +1,16 @@
 {
-  "content": {
-    "header": {
-      "logo": "middle"
-    },
-    "main": {
-      "label": "main"
-    },
-    "footer": {
-      "label": "footer"
-    }
+  "author": {
+    "firstName": "Serhii",
+    "secondName": "Stanislav",
+    "level": "middle"
+  },
+  "header": {
+    "logo": "middle"
+  },
+  "main": {
+    "label": "main"
+  },
+  "footer": {
+    "label": "footer"
   }
 }

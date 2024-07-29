@@ -36,3 +36,9 @@
     width: 0;
   }
 }
+
+%extends-disable-blinking-link {
+  backface-visibility: hidden; // Standard property
+  -webkit-backface-visibility: hidden; // Chrome, Safari
+  -webkit-tap-highlight-color: transparent; // Chrome, Safari
+}

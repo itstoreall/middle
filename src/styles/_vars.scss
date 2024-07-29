@@ -1,11 +1,20 @@
+$min: 320px;
 $mobile: 390px;
 $tablet: 820px;
 $desktop: 1024px;
 
 // ------ Colors:
 
-$color: #b9c4da;
-$bg: #282c34;
+$light: #b9c4da;
+$middleGrey: #808898;
+$darkGrey: #454a51;
+$dark: #282c34;
+
+// --
+
+$color: $light;
+$border: $darkGrey;
+$bg: $dark;
 
 // ------ Transition:
 
@@ -17,3 +26,5 @@ $ease03s01s: 0.3s ease 0.1s;
 // ------ Global vars:
 
 $viewportHeight: 100svh;
+$headerHeight: 60px;
+$footerHeight: 60px;

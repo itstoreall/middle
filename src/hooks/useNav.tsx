@@ -10,11 +10,14 @@ const useNav = () => {
   const isResume = pathname === resume.path;
   const path = isResume ? portfolio.path : resume.path;
   const title = isResume ? portfolio.label : resume.label;
-  const button = <Link to={path}>{title}</Link>;
 
-  const navConfig = { path, title, button };
+  const button = (
+    <Link to={path}>
+      <span>{title}</span>
+    </Link>
+  );
 
-  return navConfig;
+  return { path, title, button };
 };
 
 export default useNav;

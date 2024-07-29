@@ -5,7 +5,11 @@ const { Label } = containerEnum;
 const Resume = () => {
   return (
     <Container label={Label.PAGE}>
-      <div>Resume</div>
+      <Container label={Label.MAIN}>
+        <div>
+          <p>Resume</p>
+        </div>
+      </Container>
     </Container>
   );
 };

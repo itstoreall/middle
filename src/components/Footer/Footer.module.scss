@@ -1,0 +1,14 @@
+@import '../../styles/';
+
+.footerContent {
+  @extend %extends-flex-center;
+  width: 100%;
+  height: $footerHeight;
+  user-select: none;
+
+  .copyrightBlock {
+    display: flex;
+    color: $darkGrey;
+    gap: 5px;
+  }
+}

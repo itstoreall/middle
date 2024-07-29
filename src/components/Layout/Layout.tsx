@@ -1,16 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { LayoutProps } from './types';
+import { Data } from '../../data/types';
+import { DataProvider } from '../../context/data';
 import content from '../../data';
-import Container, { containerEnum } from '../Container';
-import NavButton from '../NavButton';
+import Header from '../Header';
+import Footer from '../Footer';
 import s from './Layout.module.scss';
 
-const { Label } = containerEnum;
-
 const Layout = () => {
-  const [data, setData] = useState<LayoutProps>(null);
+  const [data, setData] = useState<Data | null>(null);
 
   useEffect(() => content && setData(content), [content]);
 
@@ -20,21 +19,17 @@ const Layout = () => {
     <div className={s.wrapper}>
       <div className={s.layout}>
         <header>
-          <Container label={Label.PAGE}>
-            <NavButton />
-
-            <div className={s.headerContent}>{'Logo'}</div>
-          </Container>
+          <Header {...{ data }} />
         </header>
 
         <main>
-          <Outlet />
+          <DataProvider {...{ data }}>
+            <Outlet />
+          </DataProvider>
         </main>
 
         <footer>
-          <Container label={Label.PAGE}>
-            <div className={s.footerContent}>Footer</div>
-          </Container>
+          <Footer {...{ data }} />
         </footer>
       </div>
     </div>
