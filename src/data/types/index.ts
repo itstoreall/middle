@@ -5,23 +5,18 @@ export type Author = {
   level: string;
 };
 
-export type SocialUrl = {
-  mob: string;
-  desk: string;
-};
-
 export type Contacts = {
   facebook: {
     label: string;
-    url: SocialUrl;
+    url: string;
   };
   github: {
     label: string;
-    url: SocialUrl;
+    url: string;
   };
   linkedin: {
     label: string;
-    url: SocialUrl;
+    url: string;
   };
 };
 

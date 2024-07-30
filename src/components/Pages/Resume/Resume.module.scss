@@ -1,47 +1,64 @@
 @import '../../../styles/';
 
+button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
 section.authorSection {
   display: inline-flex;
   flex-direction: column;
-  gap: 10px;
-  // background-color: teal;
 
   > h2.author {
-    // display: inline-flex;
-    // flex-direction: column;
     gap: 10px;
-    font-size: 20px;
-    font-weight: 700;
-    // background-color: tomato;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
   }
 
   > h3.profession {
-    font-size: 14px;
+    font-size: 20px;
     color: $middleGrey;
+    margin-bottom: 30px;
   }
 
-  > ul.contactList {
-    > li {
-      margin-bottom: 5px;
+  > ul.socialList {
+    display: flex;
+    gap: 25px;
 
+    > li {
       > button.socialButton {
         @extend %extends-flex-center;
-        padding: 0;
-        border: 0;
-        outline: none;
+        height: 40px;
 
         > svg {
-          width: 24px;
-          height: 24px;
+          width: 28px;
+          height: 28px;
+          fill: $middleGrey;
+          transition: $ease03s;
         }
 
-        &.facebook,
-        &.github {
-          padding: 2px;
+        &:hover {
+          cursor: pointer;
 
-          > svg {
-            width: 20px;
-            height: 20px;
+          &.facebook {
+            > svg {
+              fill: $facebook;
+            }
+          }
+
+          &.github {
+            > svg {
+              fill: $github;
+            }
+          }
+
+          &.linkedin {
+            > svg {
+              fill: $linkedin;
+            }
           }
         }
       }

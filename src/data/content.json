@@ -6,24 +6,15 @@
     "level": "middle",
     "facebook": {
       "label": "facebook",
-      "url": {
-        "mob": "fb://profile/SerhiiStanislav",
-        "desk": "https://www.facebook.com/SerhiiStanislav"
-      }
+      "url": "https://www.facebook.com/SerhiiStanislav"
     },
     "github": {
       "label": "github",
-      "url": {
-        "mob": "https://github.com/itstoreall",
-        "desk": "https://github.com/itstoreall"
-      }
+      "url": "https://github.com/itstoreall"
     },
     "linkedin": {
       "label": "linkedin",
-      "url": {
-        "mob": "https://www.linkedin.com/in/serhiistanislav",
-        "desk": "https://www.linkedin.com/in/serhiistanislav"
-      }
+      "url": "https://www.linkedin.com/in/serhiistanislav"
     }
   },
   "header": {

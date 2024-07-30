@@ -3,7 +3,6 @@ import { SocialData } from './types';
 import FacebookIcon from '../../../assets/icons/FacebookIcon';
 import GitHubIcon from '../../../assets/icons/GitHubIcon';
 import LinkedInIcon from '../../../assets/icons/LinkedInIcon';
-import SocialButton from './SocialButton';
 import s from './Resume.module.scss';
 
 const ResumeContent = () => {
@@ -25,10 +24,16 @@ const ResumeContent = () => {
       <section className={s.authorSection}>
         <h2 className={s.author}>{`${firstName} ${secondName}`}</h2>
         <h3 className={s.profession}>{profession}</h3>
-        <ul className={s.contactList}>
+        <ul className={s.socialList}>
           {socialData.map(el => (
-            <li>
-              <SocialButton {...{ el, s }} />
+            <li key={el.label}>
+              <button
+                className={`${s.socialButton} ${s[el.label]}`}
+                onClick={() => window.open(el.url, '_blank')}
+                title={el.label}
+              >
+                {el.icon}
+              </button>
             </li>
           ))}
         </ul>
