@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import * as gc from '../config/global';
 import Layout from '../components/Layout';
-import Resume from '../components/Pages/Resume';
+import Resume from '../components/Pages/Resume/Resume';
 import Portfolio from '../components/Pages/Portfolio';
 
 const { resume, portfolio } = gc.page;

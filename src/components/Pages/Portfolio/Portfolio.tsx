@@ -1,5 +1,5 @@
 // import useData from '../../hooks/useData';
-import Container, { containerEnum } from '../Container';
+import Container, { containerEnum } from '../../Container';
 // import s from './Pages.module.scss';
 
 const { Label } = containerEnum;

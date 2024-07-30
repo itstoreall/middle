@@ -1,0 +1,50 @@
+@import '../../../styles/';
+
+section.authorSection {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  // background-color: teal;
+
+  > h2.author {
+    // display: inline-flex;
+    // flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    // background-color: tomato;
+  }
+
+  > h3.profession {
+    font-size: 14px;
+    color: $middleGrey;
+  }
+
+  > ul.contactList {
+    > li {
+      margin-bottom: 5px;
+
+      > button.socialButton {
+        @extend %extends-flex-center;
+        padding: 0;
+        border: 0;
+        outline: none;
+
+        > svg {
+          width: 24px;
+          height: 24px;
+        }
+
+        &.facebook,
+        &.github {
+          padding: 2px;
+
+          > svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

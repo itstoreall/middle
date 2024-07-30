@@ -4,8 +4,9 @@
   position: fixed;
   width: 100%;
   background-color: $bg;
-  border-bottom: 1px solid $border;
+  // border-bottom: 1px solid $border;
   z-index: 31;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px -1px;
 
   .headerContent {
     @extend %extends-flex-x-between-y-center;

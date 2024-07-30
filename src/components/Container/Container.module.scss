@@ -21,9 +21,15 @@
     width: 100%;
     max-width: $tablet;
 
-    p {
-      line-height: 1.6;
-    }
+    /*
+    p { line-height: 1.6 }
+    */
+  }
+}
+
+.contentContainer {
+  &.content {
+    width: 100%;
   }
 }
 
@@ -32,6 +38,7 @@
 .container {
   @extend .pageContainer;
   @extend .mainContainer;
+  @extend .contentContainer;
 }
 
 /*

@@ -1,4 +1,5 @@
 export enum Label {
   PAGE = 'page',
-  MAIN = 'main'
+  MAIN = 'main',
+  CONTENT = 'content'
 }
