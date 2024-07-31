@@ -17,11 +17,23 @@
       "url": "https://www.linkedin.com/in/serhiistanislav"
     }
   },
+  "skills": [
+    { "label": "frontend", "percent": 85 },
+    { "label": "backend", "percent": 65 },
+    { "label": "database", "percent": 30 },
+    { "label": "blockchain", "percent": 45 },
+    { "label": "ai", "percent": 55 },
+    { "label": "server", "percent": 20 }
+  ],
   "header": {
     "logo": "middle"
   },
   "main": {
-    "label": "main"
+    "label": "main",
+    "resume": {
+      "author": "author",
+      "skills": "skills"
+    }
   },
   "footer": {
     "label": "footer"

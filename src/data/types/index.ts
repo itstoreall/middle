@@ -20,8 +20,11 @@ export type Contacts = {
   };
 };
 
+export type Skill = { label: string; percent: number };
+
 export type Data = {
   author: Author & Contacts;
+  skills: Skill[];
 
   header: {
     logo: string;
@@ -29,6 +32,10 @@ export type Data = {
 
   main: {
     label: string;
+    resume: {
+      author: string;
+      skills: string;
+    };
   };
 
   footer: {

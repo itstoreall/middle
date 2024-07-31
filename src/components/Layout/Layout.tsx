@@ -37,9 +37,3 @@ const Layout = () => {
 };
 
 export default Layout;
-
-/*
-
-value={{ unstyled: true }}
-
-*/
