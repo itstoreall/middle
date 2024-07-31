@@ -13,7 +13,7 @@ const SkillList = () => {
     <ul className={s.skillList}>
       {skills.map(skill => (
         <li key={skill.label}>
-          <h3>{skill.label}</h3>
+          <h3 className={s.skillTitle}>{skill.label}</h3>
           <div className={s.progressBox}>
             <ProgressBar percent={skill.percent} />
           </div>

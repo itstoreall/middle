@@ -25,6 +25,14 @@
     { "label": "ai", "percent": 55 },
     { "label": "server", "percent": 20 }
   ],
+  "stack": [
+    { "label": "frontend", "set": ["react", "next", "typescript", "sass"] },
+    { "label": "backend", "set": [""] },
+    { "label": "database", "set": [""] },
+    { "label": "blockchain", "set": [""] },
+    { "label": "ai", "set": [""] },
+    { "label": "server", "set": [""] }
+  ],
   "header": {
     "logo": "middle"
   },
@@ -32,7 +40,8 @@
     "label": "main",
     "resume": {
       "author": "author",
-      "skills": "skills"
+      "skills": "skills",
+      "stack": "stack"
     }
   },
   "footer": {

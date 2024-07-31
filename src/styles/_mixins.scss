@@ -29,3 +29,7 @@
     }
   }
 } // @include media-screen('min', '600px', 'land'){}
+
+@mixin box-shadow($offset, $color) {
+  box-shadow: $offset $offset 0 0 $color;
+}
