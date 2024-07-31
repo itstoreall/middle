@@ -5,7 +5,7 @@ $desktop: 1024px;
 
 // ------ Colors:
 
-$light: #b9c4da;
+$lightGrey: #b9c4da;
 $middleGrey: #808898;
 $darkGrey: #454a51;
 $dark: #282c34;
@@ -16,7 +16,7 @@ $linkedin: #0077b5;
 
 // --
 
-$color: $light;
+$color: $lightGrey;
 $border: $darkGrey;
 $bg: $dark;
 
@@ -24,6 +24,9 @@ $bg: $dark;
 
 $ease0s: 0s ease;
 $ease03s: 0.3s ease;
+$easeOut05s: 0.5s ease-out;
+$easeInOut05s: 0.5s ease-in-out;
+
 $ease03s03s: 0.3s ease 0.3s;
 $ease03s01s: 0.3s ease 0.1s;
 

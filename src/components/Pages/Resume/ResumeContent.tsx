@@ -4,6 +4,7 @@ import FacebookIcon from '../../../assets/icons/FacebookIcon';
 import GitHubIcon from '../../../assets/icons/GitHubIcon';
 import LinkedInIcon from '../../../assets/icons/LinkedInIcon';
 import s from './Resume.module.scss';
+import ProgressBar from '../../ProgressBar';
 
 const ResumeContent = () => {
   const data = useData();
@@ -38,6 +39,9 @@ const ResumeContent = () => {
           ))}
         </ul>
       </section>
+      <ProgressBar percent={35} />
+      <ProgressBar percent={67} />
+      <ProgressBar percent={100} />
     </>
   );
 };

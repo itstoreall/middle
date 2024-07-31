@@ -1,0 +1,21 @@
+@import '../../styles/';
+
+div.progressBar {
+  position: relative;
+  height: 30px;
+  background-color: $darkGrey;
+  overflow: hidden;
+  transition: width $easeInOut05s;
+
+  > span.progressCounter {
+    position: absolute;
+    right: 0;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color: $lightGrey;
+  }
+}
