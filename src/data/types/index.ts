@@ -21,7 +21,14 @@ export type Contacts = {
 };
 
 export type Skill = { label: string; percent: number };
-export type Stack = { label: string; set: string[] };
+
+export type Stack = {
+  label: string;
+  set: {
+    often: string[];
+    familiar: string[];
+  };
+};
 
 export type Data = {
   author: Author & Contacts;

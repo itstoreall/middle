@@ -10,20 +10,43 @@ const StackList = () => {
 
   return (
     <ul className={s.stackList}>
-      {stack.map(tech => (
-        <li key={tech.label}>
-          <h3 className={s.stackTitle}>{tech.label}</h3>
-          <span className={s.subtitle}>{'most often used'}</span>
+      {stack.map(tech => {
+        const { often, familiar } = tech.set;
 
-          <ul className={s.techList}>
-            {tech.set.map(el => (
-              <li>
-                <span className={s.tech}>{el}</span>
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))}
+        return (
+          <li key={tech.label}>
+            <h3 className={s.stackTitle}>{tech.label}</h3>
+
+            <div className={s.techBlock}>
+              {often.length ? (
+                <div className={`${s.setBox} ${s.often}`}>
+                  <span className={s.subtitle}>{'Most often used:'}</span>
+                  <ul className={s.techList}>
+                    {often.map((el, idx) => (
+                      <li key={idx}>
+                        <span className={s.tech}>{el}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {familiar.length ? (
+                <div className={`${s.setBox} ${s.familiar}`}>
+                  <span className={s.subtitle}>{'Familiar with:'}</span>
+                  <ul className={s.techList}>
+                    {familiar.map((el, idx) => (
+                      <li key={idx}>
+                        <span className={s.tech}>{el}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          </li>
+        );
+      })}
     </ul>
   );
 };

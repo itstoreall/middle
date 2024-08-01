@@ -21,17 +21,76 @@
     { "label": "frontend", "percent": 85 },
     { "label": "backend", "percent": 65 },
     { "label": "database", "percent": 30 },
-    { "label": "blockchain", "percent": 45 },
-    { "label": "ai", "percent": 55 },
+    { "label": "blockchain", "percent": 40 },
+    { "label": "ai", "percent": 50 },
     { "label": "server", "percent": 20 }
   ],
   "stack": [
-    { "label": "frontend", "set": ["react", "next", "typescript", "sass"] },
-    { "label": "backend", "set": [""] },
-    { "label": "database", "set": [""] },
-    { "label": "blockchain", "set": [""] },
-    { "label": "ai", "set": [""] },
-    { "label": "server", "set": [""] }
+    {
+      "label": "frontend",
+      "set": {
+        "often": [
+          "react",
+          "typescript",
+          "sass",
+          "axios",
+          "apollo client",
+          "socket.io-client"
+        ],
+        "familiar": [
+          "next",
+          "next-themes",
+          "styled components",
+          "tanstack react-query",
+          "webpack",
+          "react-google-recaptcha"
+        ]
+      }
+    },
+    {
+      "label": "backend",
+      "set": {
+        "often": [
+          "express",
+          "sequelize",
+          "graphql",
+          "mongoose",
+          "socket.io",
+          "node-cache",
+          "winston",
+          "apollo-server-express"
+        ],
+        "familiar": ["node-cron", "pg"]
+      }
+    },
+    {
+      "label": "database",
+      "set": {
+        "often": ["mongodb"],
+        "familiar": ["postgresql"]
+      }
+    },
+    {
+      "label": "blockchain",
+      "set": {
+        "often": ["wagmi", "web3"],
+        "familiar": ["moralis", "ethers", "web3modal wagmi", "viem"]
+      }
+    },
+    {
+      "label": "ai",
+      "set": {
+        "often": ["openai", "anthropic-ai"],
+        "familiar": []
+      }
+    },
+    {
+      "label": "server",
+      "set": {
+        "often": ["vercel", "heroku"],
+        "familiar": ["aws", "netlify"]
+      }
+    }
   ],
   "header": {
     "logo": "middle"
