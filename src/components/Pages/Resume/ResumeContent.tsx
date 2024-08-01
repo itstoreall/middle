@@ -3,6 +3,7 @@ import SocialButtons from './SocialButtons';
 import SkillList from './SkillList';
 import s from './Resume.module.scss';
 import StackList from './StackList';
+import SoftList from './SoftList';
 
 const ResumeContent = () => {
   const data = useData();
@@ -10,7 +11,7 @@ const ResumeContent = () => {
   if (!data) return null;
 
   const { firstName, secondName, profession } = data.author;
-  const { skills, stack } = data.main.resume;
+  const { skills, stack, soft } = data.main.resume;
 
   return (
     <>
@@ -28,6 +29,11 @@ const ResumeContent = () => {
       <section className={s.stackSection}>
         <h2 className={s.title}>{stack}</h2>
         <StackList />
+      </section>
+
+      <section className={s.softSection}>
+        <h2 className={s.title}>{soft}</h2>
+        <SoftList />
       </section>
     </>
   );

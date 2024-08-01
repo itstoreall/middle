@@ -33,3 +33,14 @@
 @mixin box-shadow($offset, $color) {
   box-shadow: $offset $offset 0 0 $color;
 }
+
+@mixin before($w, $h, $color, $trn: '') {
+  &::before {
+    content: '';
+    margin-right: 10px;
+    width: $w;
+    min-height: $h;
+    background-color: $color;
+    transition: background-color $trn;
+  }
+}

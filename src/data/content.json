@@ -41,9 +41,9 @@
           "next",
           "next-themes",
           "styled components",
-          "tanstack react-query",
           "webpack",
-          "react-google-recaptcha"
+          "react-google-recaptcha",
+          "tanstack react-query"
         ]
       }
     },
@@ -74,7 +74,7 @@
       "label": "blockchain",
       "set": {
         "often": ["wagmi", "web3"],
-        "familiar": ["moralis", "ethers", "web3modal wagmi", "viem"]
+        "familiar": ["moralis", "ethers", "viem", "web3modal wagmi"]
       }
     },
     {
@@ -92,6 +92,21 @@
       }
     }
   ],
+  "soft": {
+    "label": "soft",
+    "set": [
+      "Understanding and considering the perspectives of others",
+      "Building positive relationships with team members",
+      "Proficiency with tools like Jira or ClickUp for team collaboration",
+      "Dividing tasks into subtasks and finding innovative solutions",
+      "Identifying and focusing on the most critical or priority tasks",
+      "Meeting project deadlines and managing workload efficiently",
+      "Adjusting to changing project requirements and environments",
+      "Ensuring code quality and completing tasks accurately",
+      "Understanding and prioritizing user needs and experiences",
+      "Finding mutually beneficial solutions during disagreements"
+    ]
+  },
   "header": {
     "logo": "middle"
   },
@@ -100,7 +115,8 @@
     "resume": {
       "author": "author",
       "skills": "skills",
-      "stack": "stack"
+      "stack": "stack",
+      "soft": "soft"
     }
   },
   "footer": {

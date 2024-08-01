@@ -20,7 +20,7 @@ const StackList = () => {
             <div className={s.techBlock}>
               {often.length ? (
                 <div className={`${s.setBox} ${s.often}`}>
-                  <span className={s.subtitle}>{'Most often used:'}</span>
+                  <span className={s.subtitle}>{'Frequently used:'}</span>
                   <ul className={s.techList}>
                     {often.map((el, idx) => (
                       <li key={idx}>

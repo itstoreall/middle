@@ -30,10 +30,16 @@ export type Stack = {
   };
 };
 
+export type Soft = {
+  label: string;
+  set: string[];
+};
+
 export type Data = {
   author: Author & Contacts;
   skills: Skill[];
   stack: Stack[];
+  soft: Soft;
 
   header: {
     logo: string;
@@ -45,6 +51,7 @@ export type Data = {
       author: string;
       skills: string;
       stack: string;
+      soft: string;
     };
   };
 

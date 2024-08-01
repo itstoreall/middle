@@ -22,12 +22,8 @@ section.authorSection {
   }
 
   > h2.profession {
-    // font-size: 20px;
-    // color: $middleGrey;
-    // font-size: 14px;
     font-weight: 600;
     color: $middleGrey;
-    // text-transform: uppercase;
     margin-bottom: 30px;
     user-select: none;
   }
@@ -92,6 +88,8 @@ section {
   // ------ Skills:
 
   &.skilsSection {
+    user-select: none;
+
     > ul.skillList > li {
       .progressBox {
         > div {
@@ -105,10 +103,14 @@ section {
   // ------ Stack:
 
   &.stackSection {
+    user-select: none;
+
     > ul.stackList > li {
-      /*
-      > h3.stackTitle {} // *
-      */
+      // &:hover {
+      //   > h3.stackTitle {
+      //     color: $selection;
+      //   }
+      // }
 
       .techBlock {
         padding: 15px 15px 20px;
@@ -150,6 +152,26 @@ section {
             }
           }
         }
+      }
+    }
+  }
+
+  // ------ Soft:
+
+  &.softSection {
+    user-select: none;
+
+    > ul.softList > li {
+      display: flex;
+
+      @include before(22px, 100%, $darkGrey, $ease03s03s);
+
+      &:hover {
+        @include before(22px, 100%, $selection);
+      }
+
+      > span.skill {
+        line-height: 1.4;
       }
     }
   }
