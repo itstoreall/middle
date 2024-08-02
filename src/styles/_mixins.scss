@@ -41,6 +41,7 @@
     width: $w;
     min-height: $h;
     background-color: $color;
+    border-radius: 2px;
     transition: background-color $trn;
   }
 }

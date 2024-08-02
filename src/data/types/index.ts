@@ -5,7 +5,7 @@ export type Author = {
   level: string;
 };
 
-export type Contacts = {
+export type Social = {
   facebook: {
     label: string;
     url: string;
@@ -35,11 +35,19 @@ export type Soft = {
   set: string[];
 };
 
+export type Project = {
+  title: string;
+  url: string;
+  source: string;
+  img: string;
+};
+
 export type Data = {
-  author: Author & Contacts;
+  author: Author & Social;
   skills: Skill[];
   stack: Stack[];
   soft: Soft;
+  projects: Project[];
 
   header: {
     logo: string;
@@ -52,6 +60,9 @@ export type Data = {
       skills: string;
       stack: string;
       soft: string;
+    };
+    portfolio: {
+      projects: string;
     };
   };
 

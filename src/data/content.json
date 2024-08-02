@@ -107,6 +107,14 @@
       "Finding mutually beneficial solutions during disagreements"
     ]
   },
+  "projects": [
+    {
+      "title": "New resume & portfolio",
+      "url": "",
+      "source": "",
+      "img": "project_01"
+    }
+  ],
   "header": {
     "logo": "middle"
   },
@@ -117,6 +125,9 @@
       "skills": "skills",
       "stack": "stack",
       "soft": "soft"
+    },
+    "portfolio": {
+      "projects": "projects"
     }
   },
   "footer": {
