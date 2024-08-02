@@ -1,5 +1,28 @@
 @import '../../../styles/';
 
+// ------ Hero:
+
+section.heroSection {
+  display: inline-flex;
+  flex-direction: column;
+
+  > h1.portpolio {
+    @extend %extends-text-selection;
+    gap: 10px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+  }
+
+  > h2.subtitle {
+    font-weight: 600;
+    color: $middleGrey;
+    margin-bottom: 30px;
+    user-select: none;
+  }
+}
+
 section.projectSection {
   > h2.title {
     font-size: 26px;
@@ -32,27 +55,27 @@ section.projectSection {
     > ul.projectList {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 50px;
       // background-color: teal;
 
       @include media-screen-orientation('min', $tablet) {
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
       }
 
       > li {
         // background-color: tomato;
 
-        .projectContent {
+        .imageBlock {
+          min-height: 146px;
+          margin-bottom: 15px;
           // background-color: skyblue;
 
           .thumb {
-            margin-bottom: 20px;
-            min-height: 142px;
             border-radius: 2px;
             overflow: hidden;
             @include box-shadow(3px, $black);
-
-            // background-color: green;
+            border: 1px solid $darkGrey;
 
             > img {
               display: block;
@@ -61,12 +84,38 @@ section.projectSection {
           }
         }
 
-        // .progressBox {
-        //   > div {
-        //     border-radius: 2px;
-        //     @include box-shadow(3px, $black);
-        //   }
-        // }
+        .metaBlock {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          > h3.title {
+            font-weight: 600;
+            color: $middleGrey;
+          }
+
+          > span.buttonBox {
+            display: flex;
+            gap: 10px;
+
+            > a {
+              @extend %extends-flex-center;
+              min-width: 76px;
+              height: 20px;
+              font-size: 10px;
+              font-weight: 700;
+              text-transform: uppercase;
+              color: $dark;
+              background-color: $middleGrey;
+              border-radius: 15px;
+              transition: $ease03s;
+
+              &:hover {
+                background-color: $lightGrey;
+              }
+            }
+          }
+        }
       }
     }
   }

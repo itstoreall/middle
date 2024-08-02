@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import useScrollToTop from '../../hooks/useScrollToTop';
 import { Data } from '../../data/types';
 import { DataProvider } from '../../context/data';
 import content from '../../data';
@@ -10,6 +11,7 @@ import s from './Layout.module.scss';
 
 const Layout = () => {
   const [data, setData] = useState<Data | null>(null);
+  const headerRef = useScrollToTop();
 
   useEffect(() => content && setData(content), [content]);
 
@@ -18,7 +20,7 @@ const Layout = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.layout}>
-        <header>
+        <header ref={headerRef}>
           <Header {...{ data }} />
         </header>
 

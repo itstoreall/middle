@@ -7,12 +7,18 @@ const PortfolioContent = () => {
 
   if (!data) return null;
 
-  // const { firstName, secondName, profession } = data.author;
+  const { portfolio } = data;
+  const { frontend } = data.main.portfolio;
 
   return (
     <>
+      <section className={s.heroSection}>
+        <h1 className={s.portpolio}>{portfolio.title}</h1>
+        <h2 className={s.subtitle}>{portfolio.subtitle}</h2>
+      </section>
+
       <section className={s.projectSection}>
-        <h2 className={s.title}>{'projects'}</h2>
+        <h2 className={s.title}>{frontend}</h2>
         <ProjectList />
       </section>
     </>

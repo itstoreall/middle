@@ -1,9 +1,9 @@
 import useData from '../../../hooks/useData';
 import SocialButtons from './SocialButtons';
 import SkillList from './SkillList';
-import s from './Resume.module.scss';
 import StackList from './StackList';
 import SoftList from './SoftList';
+import s from './Resume.module.scss';
 
 const ResumeContent = () => {
   const data = useData();

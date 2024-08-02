@@ -107,12 +107,22 @@
       "Finding mutually beneficial solutions during disagreements"
     ]
   },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Collection of my projects"
+  },
   "projects": [
     {
       "title": "New resume & portfolio",
-      "url": "",
-      "source": "",
+      "url": "https://itstoreall.github.io/middle",
+      "source": "https://github.com/itstoreall/middle",
       "img": "project_01"
+    },
+    {
+      "title": "Old resume & portfolio",
+      "url": "https://itstoreall.github.io/reactor",
+      "source": "https://github.com/itstoreall/reactor",
+      "img": "project_02"
     }
   ],
   "header": {
@@ -127,7 +137,7 @@
       "soft": "soft"
     },
     "portfolio": {
-      "projects": "projects"
+      "frontend": "frontend"
     }
   },
   "footer": {
