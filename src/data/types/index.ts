@@ -43,9 +43,20 @@ export type Portfolio = {
 export type Project = {
   title: string;
   url: string;
-  source: string;
+  src_ui: string;
+  src_api: string;
   img: string;
+  ui_password: boolean;
+  status: boolean;
 };
+
+export type Projects = {
+  frontend: Project[];
+  fullstack: Project[];
+  backend: Project[];
+};
+
+export type ProjectData = { projects: Projects };
 
 export type Data = {
   author: Author & Social;
@@ -53,7 +64,7 @@ export type Data = {
   stack: Stack[];
   soft: Soft;
   portfolio: Portfolio;
-  projects: Project[];
+  // projects: Projects;
 
   header: {
     logo: string;
@@ -69,10 +80,12 @@ export type Data = {
     };
     portfolio: {
       frontend: string;
+      backend: string;
+      fullstack: string;
     };
   };
 
   footer: {
     label: string;
   };
-};
+} & ProjectData;

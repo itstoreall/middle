@@ -111,20 +111,76 @@
     "title": "Portfolio",
     "subtitle": "Collection of my projects"
   },
-  "projects": [
-    {
-      "title": "New resume & portfolio",
-      "url": "https://itstoreall.github.io/middle",
-      "source": "https://github.com/itstoreall/middle",
-      "img": "project_01"
-    },
-    {
-      "title": "Old resume & portfolio",
-      "url": "https://itstoreall.github.io/reactor",
-      "source": "https://github.com/itstoreall/reactor",
-      "img": "project_02"
-    }
-  ],
+  "projects": {
+    "frontend": [
+      {
+        "title": "New resume & portfolio",
+        "url": "https://itstoreall.github.io/middle",
+        "src_ui": "https://github.com/itstoreall/middle",
+        "src_api": "",
+        "img": "frontend_01",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "Healthy-Blog UI",
+        "url": "https://healthy.storeall.com.ua",
+        "src_ui": "https://github.com/itstoreall/healthy-blog",
+        "src_api": "",
+        "img": "frontend_02",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "Collection of React features",
+        "url": "https://itstoreall.github.io/codebox",
+        "src_ui": "https://github.com/itstoreall/codebox",
+        "src_api": "",
+        "img": "frontend_03",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "Old resume & portfolio",
+        "url": "https://itstoreall.github.io/reactor",
+        "src_ui": "https://github.com/itstoreall/reactor",
+        "src_api": "",
+        "img": "frontend_04",
+        "ui_password": false,
+        "status": false
+      }
+    ],
+    "fullstack": [
+      {
+        "title": "Сhat with AI about Norway",
+        "url": "https://www.thisisnorway.info",
+        "src_ui": "",
+        "src_api": "",
+        "img": "fullstack_01",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "Blog with an admin panel",
+        "url": "https://esoterrium.space",
+        "src_ui": "https://github.com/itstoreall/astraia",
+        "src_api": "https://github.com/itstoreall/magic-api-vercel",
+        "img": "fullstack_02",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "Healthy-Blog admin panel",
+        "url": "https://magic-admin-gql.vercel.app",
+        "src_ui": "https://github.com/itstoreall/magic-admin",
+        "src_api": "https://github.com/itstoreall/magic-api-vercel",
+        "img": "fullstack_03",
+        "ui_password": true,
+        "status": true
+      }
+    ],
+    "backend": []
+  },
   "header": {
     "logo": "middle"
   },
@@ -137,7 +193,9 @@
       "soft": "soft"
     },
     "portfolio": {
-      "frontend": "frontend"
+      "frontend": "frontend",
+      "fullstack": "fullstack",
+      "backend": "backend"
     }
   },
   "footer": {
