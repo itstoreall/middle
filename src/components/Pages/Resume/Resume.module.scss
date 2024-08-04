@@ -66,7 +66,8 @@ section.authorSection {
 section {
   &.skilsSection,
   &.stackSection,
-  &.softSection {
+  &.softSection,
+  &.aboutSection {
     > h2.title {
       font-size: 26px;
       font-weight: 600;
@@ -174,6 +175,46 @@ section {
 
       > span.skill {
         line-height: 1.4;
+      }
+    }
+  }
+
+  &.aboutSection {
+    .aboutBlock {
+      display: flex;
+      gap: 20px;
+
+      @include media-screen-orientation('max', $tablet - 200.1) {
+        flex-direction: column;
+      }
+
+      .thumb {
+        @extend %extends-flex-center;
+        min-width: 200px;
+        max-height: 300px;
+        border-radius: 2px;
+        overflow: hidden;
+        @include box-shadow(3px, $black);
+
+        @include media-screen-orientation('min', $tablet - 200) {
+          width: 200px;
+          max-height: 200px;
+        }
+
+        > img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .metaBlock {
+        > p {
+          line-height: 1.6;
+
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        }
       }
     }
   }

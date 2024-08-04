@@ -56,10 +56,10 @@ section.projectSection {
           margin-bottom: 15px;
 
           .thumb {
-            border-radius: 2px;
             overflow: hidden;
             @include box-shadow(3px, $black);
             border: 1px solid $darkGrey;
+            border-radius: 2px;
 
             &.empty {
               @extend %extends-flex-center;

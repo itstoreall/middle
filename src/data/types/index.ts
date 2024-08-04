@@ -35,6 +35,11 @@ export type Soft = {
   set: string[];
 };
 
+export type About = {
+  label: string;
+  text: string[];
+};
+
 export type Portfolio = {
   title: string;
   subtitle: string;
@@ -63,6 +68,7 @@ export type Data = {
   skills: Skill[];
   stack: Stack[];
   soft: Soft;
+  about: About;
   portfolio: Portfolio;
   // projects: Projects;
 
@@ -77,6 +83,7 @@ export type Data = {
       skills: string;
       stack: string;
       soft: string;
+      about: string;
     };
     portfolio: {
       frontend: string;

@@ -107,6 +107,15 @@
       "Finding mutually beneficial solutions during disagreements"
     ]
   },
+  "about": {
+    "label": "about",
+    "text": [
+      "Hello! I'm",
+      "For more than three years, I have been engaged in professional development of commercial web2, web3 applications, as well as implementation of AI APIs.",
+      "Depending on the project, I can function as a team player or an independent combat unit, performing tasks in javascript on the front and backend sides.",
+      "Most often used: React.js, Node.js, and TypeScript."
+    ]
+  },
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Collection of some of my projects"
@@ -218,7 +227,8 @@
       "author": "author",
       "skills": "skills",
       "stack": "stack",
-      "soft": "soft"
+      "soft": "soft",
+      "about": "about"
     },
     "portfolio": {
       "frontend": "frontend",

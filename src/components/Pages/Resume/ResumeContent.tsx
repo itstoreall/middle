@@ -3,6 +3,7 @@ import SocialButtons from './SocialButtons';
 import SkillList from './SkillList';
 import StackList from './StackList';
 import SoftList from './SoftList';
+import AboutBlock from './AboutBlock';
 import s from './Resume.module.scss';
 
 const ResumeContent = () => {
@@ -11,7 +12,7 @@ const ResumeContent = () => {
   if (!data) return null;
 
   const { firstName, secondName, profession } = data.author;
-  const { skills, stack, soft } = data.main.resume;
+  const { skills, stack, soft, about } = data.main.resume;
 
   return (
     <>
@@ -34,6 +35,11 @@ const ResumeContent = () => {
       <section className={s.softSection}>
         <h2 className={s.title}>{soft}</h2>
         <SoftList />
+      </section>
+
+      <section className={s.aboutSection}>
+        <h2 className={s.title}>{about}</h2>
+        <AboutBlock />
       </section>
     </>
   );
