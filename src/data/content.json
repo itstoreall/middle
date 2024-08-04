@@ -109,7 +109,7 @@
   },
   "portfolio": {
     "title": "Portfolio",
-    "subtitle": "Collection of my projects"
+    "subtitle": "Collection of some of my projects"
   },
   "projects": {
     "frontend": [
@@ -179,7 +179,35 @@
         "status": true
       }
     ],
-    "backend": []
+    "backend": [
+      {
+        "title": "Cryptocurrency price tracking",
+        "url": "",
+        "src_ui": "",
+        "src_api": "https://github.com/itstoreall/uni",
+        "img": "node_apollo_graphql",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "Multiple projects handler",
+        "url": "",
+        "src_ui": "",
+        "src_api": "https://github.com/itstoreall/magic-api-vercel",
+        "img": "node_apollo_graphql",
+        "ui_password": false,
+        "status": true
+      },
+      {
+        "title": "File system based backend",
+        "url": "",
+        "src_ui": "",
+        "src_api": "https://github.com/itstoreall/fs-backend",
+        "img": "node",
+        "ui_password": false,
+        "status": true
+      }
+    ]
   },
   "header": {
     "logo": "middle"

@@ -1,5 +1,6 @@
 import useData from '../../../hooks/useData';
-import { Data, ProjectData, Projects } from '../../../data/types';
+import { ButtonProps, ImageProps } from './types';
+import { ProjectData, Projects } from '../../../data/types';
 import frontend_01 from '../../../assets/images/frontend_01.png';
 import frontend_02 from '../../../assets/images/frontend_02.png';
 import frontend_03 from '../../../assets/images/frontend_03.png';
@@ -7,35 +8,52 @@ import frontend_04 from '../../../assets/images/frontend_04.png';
 import fullstack_01 from '../../../assets/images/fullstack_01.png';
 import fullstack_02 from '../../../assets/images/fullstack_02.png';
 import fullstack_03 from '../../../assets/images/fullstack_03.png';
+import empty_white from '../../../assets/images/empty_white.png';
+import LockIcon from '../../../assets/icons/LockIcon/LockIcon';
 import GraphQLIcon from '../../../assets/icons/GraphQLIcon';
 import NodeJsIcon from '../../../assets/icons/NodeJsIcon';
 import ApolloIcon from '../../../assets/icons/ApolloIcon';
 import CodeIcon from '../../../assets/icons/CodeIcon';
 import s from './Portfolio.module.scss';
-import LockIcon from '../../../assets/icons/LockIcon/LockIcon';
 
-type ImageProps = { label: string; image: string; title: string; data: Data };
-type ButtonProps = { url: string; title: string; isLock: boolean };
-
-const Image = ({ label, image, title, data }: ImageProps) => {
+const Image = ({ label, image, title, logo, data }: ImageProps) => {
   const { backend } = data.main.portfolio;
+  const isBackend = label === backend;
 
-  return label === backend ? (
-    <div className={s.logoBox}>
+  const logosNumber = isBackend
+    ? logo.split(/_+/).filter(part => part !== '').length
+    : 0;
+
+  const backendLogoHandler = () =>
+    logosNumber === 3 ? (
+      <>
+        <NodeJsIcon />
+        <ApolloIcon />
+        <GraphQLIcon />
+      </>
+    ) : (
       <NodeJsIcon />
-      <ApolloIcon />
-      <GraphQLIcon />
+    );
+
+  const previewImageHandler = () =>
+    image ? (
+      <img src={image} alt={title} />
+    ) : (
+      <div className={s.emptyBlock}>
+        <img src={empty_white} alt={'empty white'} />
+        <span className={s.logoBox}>
+          <CodeIcon />
+        </span>
+      </div>
+    );
+
+  return isBackend ? (
+    <div className={s.emptyBlock}>
+      <img src={empty_white} alt={'empty white'} />
+      <span className={s.logoBox}>{backendLogoHandler()}</span>
     </div>
   ) : (
-    <>
-      {image ? (
-        <img src={image} alt={title} />
-      ) : (
-        <div className={s.logoBox}>
-          <CodeIcon />
-        </div>
-      )}
-    </>
+    previewImageHandler()
   );
 };
 
@@ -68,13 +86,14 @@ const ProjectList = ({ label }: { label: keyof Projects }) => {
   ];
 
   const { projects } = data as ProjectData;
+  const { backend } = data.main.portfolio;
 
   return (
     <ul className={s.projectList}>
       {projects[label].map((el, idx) => {
         if (!el.status) return null;
 
-        const image = images.find(img => img.includes(el.img));
+        const image = images.find(img => el.img && img.includes(el.img));
         const isLockedUI = el.ui_password;
         const noImageStyle = !image ? s.empty : '';
 
@@ -86,6 +105,7 @@ const ProjectList = ({ label }: { label: keyof Projects }) => {
                   label={label}
                   image={image ?? ''}
                   title={el.title}
+                  logo={label === backend ? el.img : ''}
                   data={data}
                 />
               </div>

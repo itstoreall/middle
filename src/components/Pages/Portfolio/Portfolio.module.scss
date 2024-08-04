@@ -63,7 +63,7 @@ section.projectSection {
 
             &.empty {
               @extend %extends-flex-center;
-              min-height: 146px;
+              // min-height: 134px;
             }
 
             > img {
@@ -71,13 +71,25 @@ section.projectSection {
               width: 100%;
             }
 
-            .logoBox {
-              display: flex;
-              gap: 15px;
+            .emptyBlock {
+              @extend %extends-flex-center;
+              position: relative;
 
-              > svg {
-                width: 40px;
-                height: 40px;
+              > img {
+                display: block;
+                width: 100%;
+                opacity: 0;
+              }
+
+              > span.logoBox {
+                display: flex;
+                position: absolute;
+                gap: 15px;
+
+                > svg {
+                  width: 40px;
+                  height: 40px;
+                }
               }
             }
           }
