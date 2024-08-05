@@ -19,10 +19,10 @@
   },
   "skills": [
     { "label": "frontend", "percent": 85 },
-    { "label": "backend", "percent": 65 },
+    { "label": "backend", "percent": 60 },
     { "label": "database", "percent": 30 },
     { "label": "blockchain", "percent": 40 },
-    { "label": "ai", "percent": 50 },
+    { "label": "ai", "percent": 55 },
     { "label": "server", "percent": 20 }
   ],
   "stack": [
@@ -113,6 +113,39 @@
       "Hello! I'm",
       "With over three years of experience in professional commercial development, I specialize in web2, web3 applications, and AI API integration. Depending on the project, I can function as a team player or an independent combat unit, handling tasks in JavaScript for both front-end and back-end development.",
       "Key technologies: React.js, Node.js, and TypeScript."
+    ]
+  },
+  "employment": {
+    "label": "employment",
+    "set": [
+      {
+        "position": "Full Stack Developer",
+        "company": "Dexola",
+        "start": "November 2022",
+        "end": "",
+        "description": "Integration of AI models (Anthropic-AI and OpenAI) into blockchain web applications"
+      },
+      {
+        "position": "Full Stack Developer",
+        "company": "TechBand",
+        "start": "August 2021",
+        "end": "October 2022",
+        "description": "Development of web applications in blockchain, including DeFi and NFT marketplaces"
+      },
+      {
+        "position": "Front-end Developer",
+        "company": "Freelance",
+        "start": "September 2020",
+        "end": "July 2021",
+        "description": "Single Page Application (SPA) development using React and Axios for API requests"
+      },
+      {
+        "position": "Web Designer",
+        "company": "Freelance",
+        "start": "December 2014",
+        "end": "August 2020",
+        "description": "Development of landing pages using HTML/CSS with Webflow and Adobe Muse"
+      }
     ]
   },
   "portfolio": {
@@ -227,7 +260,8 @@
       "skills": "skills",
       "stack": "stack",
       "soft": "soft",
-      "about": "about"
+      "about": "about",
+      "employment": "employment"
     },
     "portfolio": {
       "frontend": "frontend",

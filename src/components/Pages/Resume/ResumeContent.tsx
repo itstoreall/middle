@@ -5,6 +5,7 @@ import StackList from './StackList';
 import SoftList from './SoftList';
 import AboutBlock from './AboutBlock';
 import s from './Resume.module.scss';
+import EmploymentBlock from './EmploymentBlock';
 
 const ResumeContent = () => {
   const data = useData();
@@ -12,7 +13,7 @@ const ResumeContent = () => {
   if (!data) return null;
 
   const { firstName, secondName, profession } = data.author;
-  const { skills, stack, soft, about } = data.main.resume;
+  const { skills, stack, soft, about, employment } = data.main.resume;
 
   return (
     <>
@@ -40,6 +41,11 @@ const ResumeContent = () => {
       <section className={s.aboutSection}>
         <h2 className={s.title}>{about}</h2>
         <AboutBlock />
+      </section>
+
+      <section className={s.employmentSection}>
+        <h2 className={s.title}>{employment}</h2>
+        <EmploymentBlock />
       </section>
     </>
   );

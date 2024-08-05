@@ -40,6 +40,19 @@ export type About = {
   text: string[];
 };
 
+export type Job = {
+  position: string;
+  company: string;
+  start: string;
+  end: string;
+  description: string;
+};
+
+export type Employment = {
+  label: string;
+  set: Job[];
+};
+
 export type Portfolio = {
   title: string;
   subtitle: string;
@@ -70,6 +83,7 @@ export type Data = {
   soft: Soft;
   about: About;
   portfolio: Portfolio;
+  employment: Employment;
   // projects: Projects;
 
   header: {
@@ -84,6 +98,7 @@ export type Data = {
       stack: string;
       soft: string;
       about: string;
+      employment: string;
     };
     portfolio: {
       frontend: string;
