@@ -148,6 +148,35 @@
       }
     ]
   },
+  "education": {
+    "label": "education",
+    "set": [
+      {
+        "subject": "Full Stack Development",
+        "institution": "GoIT",
+        "start": "May 2020",
+        "end": "July 2021"
+      },
+      {
+        "subject": "Web Design (HTML/CSS, Adobe)",
+        "institution": "Computer Academy «Kademika» Course",
+        "start": "October 2015",
+        "end": "January 2016"
+      },
+      {
+        "subject": "Design of computer graphics",
+        "institution": "Pro Course",
+        "start": "June 2014",
+        "end": "August 2014"
+      },
+      {
+        "subject": "Practical psychology",
+        "institution": "Open International University of Human Development «Ukraine»",
+        "start": "Septermber 2006",
+        "end": "June 2011"
+      }
+    ]
+  },
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Collection of some of my projects"
@@ -261,7 +290,8 @@
       "stack": "stack",
       "soft": "soft",
       "about": "about",
-      "employment": "employment"
+      "employment": "employment",
+      "education": "education"
     },
     "portfolio": {
       "frontend": "frontend",

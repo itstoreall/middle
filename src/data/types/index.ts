@@ -53,6 +53,18 @@ export type Employment = {
   set: Job[];
 };
 
+export type Subject = {
+  subject: string;
+  institution: string;
+  start: string;
+  end: string;
+};
+
+export type Education = {
+  label: string;
+  set: Subject[];
+};
+
 export type Portfolio = {
   title: string;
   subtitle: string;
@@ -84,7 +96,7 @@ export type Data = {
   about: About;
   portfolio: Portfolio;
   employment: Employment;
-  // projects: Projects;
+  education: Education;
 
   header: {
     logo: string;
@@ -99,6 +111,7 @@ export type Data = {
       soft: string;
       about: string;
       employment: string;
+      education: string;
     };
     portfolio: {
       frontend: string;

@@ -4,8 +4,9 @@ import SkillList from './SkillList';
 import StackList from './StackList';
 import SoftList from './SoftList';
 import AboutBlock from './AboutBlock';
-import s from './Resume.module.scss';
 import EmploymentBlock from './EmploymentBlock';
+import EducationBlock from './EducationBlock';
+import s from './Resume.module.scss';
 
 const ResumeContent = () => {
   const data = useData();
@@ -13,7 +14,8 @@ const ResumeContent = () => {
   if (!data) return null;
 
   const { firstName, secondName, profession } = data.author;
-  const { skills, stack, soft, about, employment } = data.main.resume;
+  const { skills, stack, soft, about, employment, education } =
+    data.main.resume;
 
   return (
     <>
@@ -46,6 +48,11 @@ const ResumeContent = () => {
       <section className={s.employmentSection}>
         <h2 className={s.title}>{employment}</h2>
         <EmploymentBlock />
+      </section>
+
+      <section className={s.educationSection}>
+        <h2 className={s.title}>{education}</h2>
+        <EducationBlock />
       </section>
     </>
   );
