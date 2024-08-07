@@ -1,4 +1,5 @@
 export type Author = {
+  label: string;
   firstName: string;
   secondName: string;
   profession: string;
@@ -22,12 +23,22 @@ export type Social = {
 
 export type Skill = { label: string; percent: number };
 
-export type Stack = {
+export type Skills = {
+  label: string;
+  set: Skill[];
+};
+
+export type StackItem = {
   label: string;
   set: {
     often: string[];
     familiar: string[];
   };
+};
+
+export type Stack = {
+  label: string;
+  set: StackItem[];
 };
 
 export type Soft = {
@@ -71,56 +82,33 @@ export type Portfolio = {
 };
 
 export type Project = {
-  title: string;
-  url: string;
-  src_ui: string;
-  src_api: string;
-  img: string;
-  ui_password: boolean;
-  status: boolean;
+  label: string;
+  set: {
+    title: string;
+    url: string;
+    src_ui: string;
+    src_api: string;
+    img: string;
+    ui_password: boolean;
+    status: boolean;
+  }[];
 };
 
 export type Projects = {
-  frontend: Project[];
-  fullstack: Project[];
-  backend: Project[];
+  frontend: Project;
+  fullstack: Project;
+  backend: Project;
 };
 
 export type ProjectData = { projects: Projects };
 
 export type Data = {
   author: Author & Social;
-  skills: Skill[];
-  stack: Stack[];
+  skills: Skills;
+  stack: Stack;
   soft: Soft;
   about: About;
   portfolio: Portfolio;
   employment: Employment;
   education: Education;
-
-  header: {
-    logo: string;
-  };
-
-  main: {
-    label: string;
-    resume: {
-      author: string;
-      skills: string;
-      stack: string;
-      soft: string;
-      about: string;
-      employment: string;
-      education: string;
-    };
-    portfolio: {
-      frontend: string;
-      backend: string;
-      fullstack: string;
-    };
-  };
-
-  footer: {
-    label: string;
-  };
 } & ProjectData;

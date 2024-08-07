@@ -1,5 +1,4 @@
 import useData from '../../../hooks/useData';
-import { Projects } from '../../../data/types';
 import ProjectList from './ProjectList';
 import s from './Portfolio.module.scss';
 
@@ -9,7 +8,7 @@ const PortfolioContent = () => {
   if (!data) return null;
 
   const { portfolio, projects } = data;
-  const { frontend, fullstack, backend } = data.main.portfolio;
+  const { frontend, fullstack, backend } = projects;
 
   return (
     <>
@@ -18,24 +17,24 @@ const PortfolioContent = () => {
         <h2 className={s.subtitle}>{portfolio.subtitle}</h2>
       </section>
 
-      {projects.frontend.length ? (
+      {projects.frontend.set.length ? (
         <section className={s.projectSection}>
-          <h2 className={s.title}>{frontend}</h2>
-          <ProjectList label={frontend as keyof Projects} />
+          <h2 className={s.title}>{projects.frontend.label}</h2>
+          <ProjectList label={frontend.label} />
         </section>
       ) : null}
 
-      {projects.fullstack.length ? (
+      {projects.fullstack.set.length ? (
         <section className={s.projectSection}>
-          <h2 className={s.title}>{fullstack}</h2>
-          <ProjectList label={fullstack as keyof Projects} />
+          <h2 className={s.title}>{fullstack.label}</h2>
+          <ProjectList label={fullstack.label} />
         </section>
       ) : null}
 
-      {projects.backend.length ? (
+      {projects.backend.set.length ? (
         <section className={s.projectSection}>
-          <h2 className={s.title}>{backend}</h2>
-          <ProjectList label={backend as keyof Projects} />
+          <h2 className={s.title}>{backend.label}</h2>
+          <ProjectList label={backend.label} />
         </section>
       ) : null}
     </>

@@ -17,8 +17,8 @@ import CodeIcon from '../../../assets/icons/CodeIcon';
 import s from './Portfolio.module.scss';
 
 const Image = ({ label, image, title, logo, data }: ImageProps) => {
-  const { backend } = data.main.portfolio;
-  const isBackend = label === backend;
+  const { backend } = data.projects;
+  const isBackend = label === backend.label;
 
   const logosNumber = isBackend
     ? logo.split(/_+/).filter(part => part !== '').length
@@ -70,7 +70,7 @@ const Button = ({ url, title, isLock }: ButtonProps) => {
   );
 };
 
-const ProjectList = ({ label }: { label: keyof Projects }) => {
+const ProjectList = ({ label }: { label: string }) => {
   const data = useData();
 
   if (!data) return null;
@@ -86,11 +86,11 @@ const ProjectList = ({ label }: { label: keyof Projects }) => {
   ];
 
   const { projects } = data as ProjectData;
-  const { backend } = data.main.portfolio;
+  const { backend } = data.projects;
 
   return (
     <ul className={s.projectList}>
-      {projects[label].map((el, idx) => {
+      {projects[label as keyof Projects].set.map((el, idx) => {
         if (!el.status) return null;
 
         const image = images.find(img => el.img && img.includes(el.img));
@@ -105,7 +105,7 @@ const ProjectList = ({ label }: { label: keyof Projects }) => {
                   label={label}
                   image={image ?? ''}
                   title={el.title}
-                  logo={label === backend ? el.img : ''}
+                  logo={label === backend.label ? el.img : ''}
                   data={data}
                 />
               </div>

@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import { Data } from '../../data/types';
 import { DataProvider } from '../../context/data';
+import { Data } from '../../data/types';
 import content from '../../data';
 import Header from '../Header';
 import Footer from '../Footer';

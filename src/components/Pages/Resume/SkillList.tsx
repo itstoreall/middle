@@ -11,7 +11,7 @@ const SkillList = () => {
 
   return (
     <ul className={s.skillList}>
-      {skills.map(skill => (
+      {skills.set.map(skill => (
         <li key={skill.label}>
           <h3 className={s.skillTitle}>{skill.label}</h3>
           <div className={s.progressBox}>

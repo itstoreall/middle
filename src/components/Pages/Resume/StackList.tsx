@@ -10,7 +10,7 @@ const StackList = () => {
 
   return (
     <ul className={s.stackList}>
-      {stack.map(tech => {
+      {stack.set.map(tech => {
         const { often, familiar } = tech.set;
 
         return (

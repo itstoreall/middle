@@ -1,5 +1,6 @@
 {
   "author": {
+    "label": "author",
     "firstName": "Serhii",
     "secondName": "Stanislav",
     "profession": "Full Stack Developer",
@@ -17,81 +18,87 @@
       "url": "https://www.linkedin.com/in/serhiistanislav"
     }
   },
-  "skills": [
-    { "label": "frontend", "percent": 85 },
-    { "label": "backend", "percent": 60 },
-    { "label": "database", "percent": 30 },
-    { "label": "blockchain", "percent": 40 },
-    { "label": "ai", "percent": 55 },
-    { "label": "server", "percent": 20 }
-  ],
-  "stack": [
-    {
-      "label": "frontend",
-      "set": {
-        "often": [
-          "react",
-          "typescript",
-          "sass",
-          "axios",
-          "apollo client",
-          "socket.io-client"
-        ],
-        "familiar": [
-          "next",
-          "next-themes",
-          "styled components",
-          "webpack",
-          "react-google-recaptcha",
-          "tanstack react-query"
-        ]
+  "skills": {
+    "label": "skills",
+    "set": [
+      { "label": "frontend", "percent": 85 },
+      { "label": "backend", "percent": 60 },
+      { "label": "database", "percent": 30 },
+      { "label": "blockchain", "percent": 40 },
+      { "label": "ai", "percent": 55 },
+      { "label": "server", "percent": 20 }
+    ]
+  },
+  "stack": {
+    "label": "stack",
+    "set": [
+      {
+        "label": "frontend",
+        "set": {
+          "often": [
+            "react",
+            "typescript",
+            "sass",
+            "axios",
+            "apollo client",
+            "socket.io-client"
+          ],
+          "familiar": [
+            "next",
+            "next-themes",
+            "styled components",
+            "webpack",
+            "react-google-recaptcha",
+            "tanstack react-query"
+          ]
+        }
+      },
+      {
+        "label": "backend",
+        "set": {
+          "often": [
+            "express",
+            "sequelize",
+            "graphql",
+            "mongoose",
+            "socket.io",
+            "node-cache",
+            "winston",
+            "apollo-server-express"
+          ],
+          "familiar": ["node-cron", "pg"]
+        }
+      },
+      {
+        "label": "database",
+        "set": {
+          "often": ["mongodb"],
+          "familiar": ["postgresql"]
+        }
+      },
+      {
+        "label": "blockchain",
+        "set": {
+          "often": ["wagmi", "web3"],
+          "familiar": ["moralis", "ethers", "viem", "web3modal wagmi"]
+        }
+      },
+      {
+        "label": "ai",
+        "set": {
+          "often": ["openai", "anthropic-ai"],
+          "familiar": []
+        }
+      },
+      {
+        "label": "server",
+        "set": {
+          "often": ["vercel", "heroku"],
+          "familiar": ["aws", "netlify"]
+        }
       }
-    },
-    {
-      "label": "backend",
-      "set": {
-        "often": [
-          "express",
-          "sequelize",
-          "graphql",
-          "mongoose",
-          "socket.io",
-          "node-cache",
-          "winston",
-          "apollo-server-express"
-        ],
-        "familiar": ["node-cron", "pg"]
-      }
-    },
-    {
-      "label": "database",
-      "set": {
-        "often": ["mongodb"],
-        "familiar": ["postgresql"]
-      }
-    },
-    {
-      "label": "blockchain",
-      "set": {
-        "often": ["wagmi", "web3"],
-        "familiar": ["moralis", "ethers", "viem", "web3modal wagmi"]
-      }
-    },
-    {
-      "label": "ai",
-      "set": {
-        "often": ["openai", "anthropic-ai"],
-        "familiar": []
-      }
-    },
-    {
-      "label": "server",
-      "set": {
-        "often": ["vercel", "heroku"],
-        "familiar": ["aws", "netlify"]
-      }
-    }
-  ],
+    ]
+  },
   "soft": {
     "label": "soft",
     "set": [
@@ -111,7 +118,7 @@
     "label": "about",
     "text": [
       "Hello! I'm",
-      "With over three years of experience in professional commercial development, I specialize in web2, web3 applications, and AI API integration. Depending on the project, I can function as a team player or an independent combat unit, handling tasks in JavaScript for both front-end and back-end development.",
+      "With over three years of experience in professional commercial development, specialize in web2, web3 applications, and AI API integration. Depending on the project, I can function as a team player or an independent combat unit, handling tasks in JavaScript for both front-end and back-end development.",
       "Key technologies: React.js, Node.js, and TypeScript."
     ]
   },
@@ -182,124 +189,110 @@
     "subtitle": "Collection of some of my projects"
   },
   "projects": {
-    "frontend": [
-      {
-        "title": "New resume & portfolio",
-        "url": "https://itstoreall.github.io/middle",
-        "src_ui": "https://github.com/itstoreall/middle",
-        "src_api": "",
-        "img": "frontend_01",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "Healthy-Blog UI",
-        "url": "https://healthy.storeall.com.ua",
-        "src_ui": "https://github.com/itstoreall/healthy-blog",
-        "src_api": "",
-        "img": "frontend_02",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "Collection of React features",
-        "url": "https://itstoreall.github.io/codebox",
-        "src_ui": "https://github.com/itstoreall/codebox",
-        "src_api": "",
-        "img": "frontend_03",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "Old resume & portfolio",
-        "url": "https://itstoreall.github.io/reactor",
-        "src_ui": "https://github.com/itstoreall/reactor",
-        "src_api": "",
-        "img": "frontend_04",
-        "ui_password": false,
-        "status": false
-      }
-    ],
-    "fullstack": [
-      {
-        "title": "Сhat with AI about Norway",
-        "url": "https://www.thisisnorway.info",
-        "src_ui": "",
-        "src_api": "",
-        "img": "fullstack_01",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "Blog with an admin panel",
-        "url": "https://esoterrium.space",
-        "src_ui": "https://github.com/itstoreall/astraia",
-        "src_api": "https://github.com/itstoreall/magic-api-vercel",
-        "img": "fullstack_02",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "Healthy-Blog admin panel",
-        "url": "https://magic-admin-gql.vercel.app",
-        "src_ui": "https://github.com/itstoreall/magic-admin",
-        "src_api": "https://github.com/itstoreall/magic-api-vercel",
-        "img": "fullstack_03",
-        "ui_password": true,
-        "status": true
-      }
-    ],
-    "backend": [
-      {
-        "title": "Cryptocurrency price tracking",
-        "url": "",
-        "src_ui": "",
-        "src_api": "https://github.com/itstoreall/uni",
-        "img": "node_apollo_graphql",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "Multiple projects handler",
-        "url": "",
-        "src_ui": "",
-        "src_api": "https://github.com/itstoreall/magic-api-vercel",
-        "img": "node_apollo_graphql",
-        "ui_password": false,
-        "status": true
-      },
-      {
-        "title": "File system based backend",
-        "url": "",
-        "src_ui": "",
-        "src_api": "https://github.com/itstoreall/fs-backend",
-        "img": "node",
-        "ui_password": false,
-        "status": true
-      }
-    ]
-  },
-  "header": {
-    "logo": "middle"
-  },
-  "main": {
-    "label": "main",
-    "resume": {
-      "author": "author",
-      "skills": "skills",
-      "stack": "stack",
-      "soft": "soft",
-      "about": "about",
-      "employment": "employment",
-      "education": "education"
+    "frontend": {
+      "label": "frontend",
+      "set": [
+        {
+          "title": "New resume & portfolio",
+          "url": "https://itstoreall.github.io/middle",
+          "src_ui": "https://github.com/itstoreall/middle",
+          "src_api": "",
+          "img": "frontend_01",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "Healthy-Blog UI",
+          "url": "https://healthy.storeall.com.ua",
+          "src_ui": "https://github.com/itstoreall/healthy-blog",
+          "src_api": "",
+          "img": "frontend_02",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "Collection of React features",
+          "url": "https://itstoreall.github.io/codebox",
+          "src_ui": "https://github.com/itstoreall/codebox",
+          "src_api": "",
+          "img": "frontend_03",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "Old resume & portfolio",
+          "url": "https://itstoreall.github.io/reactor",
+          "src_ui": "https://github.com/itstoreall/reactor",
+          "src_api": "",
+          "img": "frontend_04",
+          "ui_password": false,
+          "status": false
+        }
+      ]
     },
-    "portfolio": {
-      "frontend": "frontend",
-      "fullstack": "fullstack",
-      "backend": "backend"
+    "fullstack": {
+      "label": "fullstack",
+      "set": [
+        {
+          "title": "Сhat with AI about Norway",
+          "url": "https://www.thisisnorway.info",
+          "src_ui": "",
+          "src_api": "",
+          "img": "fullstack_01",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "Blog with an admin panel",
+          "url": "https://esoterrium.space",
+          "src_ui": "https://github.com/itstoreall/astraia",
+          "src_api": "https://github.com/itstoreall/magic-api-vercel",
+          "img": "fullstack_02",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "Healthy-Blog admin panel",
+          "url": "https://magic-admin-gql.vercel.app",
+          "src_ui": "https://github.com/itstoreall/magic-admin",
+          "src_api": "https://github.com/itstoreall/magic-api-vercel",
+          "img": "fullstack_03",
+          "ui_password": true,
+          "status": true
+        }
+      ]
+    },
+    "backend": {
+      "label": "backend",
+      "set": [
+        {
+          "title": "Cryptocurrency price tracking",
+          "url": "",
+          "src_ui": "",
+          "src_api": "https://github.com/itstoreall/uni",
+          "img": "node_apollo_graphql",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "Multiple projects handler",
+          "url": "",
+          "src_ui": "",
+          "src_api": "https://github.com/itstoreall/magic-api-vercel",
+          "img": "node_apollo_graphql",
+          "ui_password": false,
+          "status": true
+        },
+        {
+          "title": "File system based backend",
+          "url": "",
+          "src_ui": "",
+          "src_api": "https://github.com/itstoreall/fs-backend",
+          "img": "node",
+          "ui_password": false,
+          "status": true
+        }
+      ]
     }
-  },
-  "footer": {
-    "label": "footer"
   }
 }

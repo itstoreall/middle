@@ -13,9 +13,8 @@ const ResumeContent = () => {
 
   if (!data) return null;
 
-  const { firstName, secondName, profession } = data.author;
-  const { skills, stack, soft, about, employment, education } =
-    data.main.resume;
+  const { author, skills, stack, soft, about, employment, education } = data;
+  const { firstName, secondName, profession } = author;
 
   return (
     <>
@@ -26,32 +25,32 @@ const ResumeContent = () => {
       </section>
 
       <section className={s.skilsSection}>
-        <h2 className={s.title}>{skills}</h2>
+        <h2 className={s.title}>{skills.label}</h2>
         <SkillList />
       </section>
 
       <section className={s.stackSection}>
-        <h2 className={s.title}>{stack}</h2>
+        <h2 className={s.title}>{stack.label}</h2>
         <StackList />
       </section>
 
       <section className={s.softSection}>
-        <h2 className={s.title}>{soft}</h2>
+        <h2 className={s.title}>{soft.label}</h2>
         <SoftList />
       </section>
 
       <section className={s.aboutSection}>
-        <h2 className={s.title}>{about}</h2>
+        <h2 className={s.title}>{about.label}</h2>
         <AboutBlock />
       </section>
 
       <section className={s.employmentSection}>
-        <h2 className={s.title}>{employment}</h2>
+        <h2 className={s.title}>{employment.label}</h2>
         <EmploymentBlock />
       </section>
 
       <section className={s.educationSection}>
-        <h2 className={s.title}>{education}</h2>
+        <h2 className={s.title}>{education.label}</h2>
         <EducationBlock />
       </section>
     </>
