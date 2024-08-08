@@ -9,15 +9,13 @@ const { Label } = containerEnum;
 const Header = ({ data }: gt.DataProps) => {
   const { level } = data.author;
 
-  const urlPDF = data.resume_pdf_url.slice(1, -1);
-
   return (
     <div className={s.headerBlock}>
       <Container label={Label.PAGE}>
         <div className={s.headerContent}>
           <h1>{level}</h1>
           <div className={s.buttonBlock}>
-            <DownloadPDF url={urlPDF} />
+            <DownloadPDF url={data.resume_pdf_url} />
             <NavButton />
           </div>
         </div>

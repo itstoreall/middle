@@ -13,6 +13,8 @@ button.downloadButton {
   }
 
   &:hover {
+    cursor: pointer;
+
     > svg > g {
       fill: $lightGrey;
     }
