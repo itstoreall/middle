@@ -111,4 +111,5 @@ export type Data = {
   portfolio: Portfolio;
   employment: Employment;
   education: Education;
+  resume_pdf_url: string;
 } & ProjectData;
