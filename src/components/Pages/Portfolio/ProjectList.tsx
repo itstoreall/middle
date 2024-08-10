@@ -9,11 +9,11 @@ import fullstack_01 from '../../../assets/images/fullstack_01.png';
 import fullstack_02 from '../../../assets/images/fullstack_02.png';
 import fullstack_03 from '../../../assets/images/fullstack_03.png';
 import empty_white from '../../../assets/images/empty_white.png';
-import LockIcon from '../../../assets/icons/LockIcon/LockIcon';
 import GraphQLIcon from '../../../assets/icons/GraphQLIcon';
 import NodeJsIcon from '../../../assets/icons/NodeJsIcon';
 import ApolloIcon from '../../../assets/icons/ApolloIcon';
 import CodeIcon from '../../../assets/icons/CodeIcon';
+import LockIcon from '../../../assets/icons/LockIcon';
 import s from './Portfolio.module.scss';
 
 const Image = ({ label, image, title, logo, data }: ImageProps) => {

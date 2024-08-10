@@ -1,0 +1,59 @@
+@import '../../../styles';
+@import '../CertificatModal/CertificatModal.module.scss';
+@import '../SecondModal/SecondModal.module.scss';
+
+.customModals {
+  @extend .second;
+  @extend .certificate;
+
+  // --- Add new custom modal here:
+}
+
+.backdrop {
+  @extend %extends-flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.5s;
+  z-index: 41;
+
+  &.fadeOut {
+    animation: fadeOut 0.5s forwards;
+  }
+
+  .modal {
+    width: 200px;
+    height: 200px;
+
+    > button.closeButton {
+      position: absolute;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+    }
+  }
+
+  @extend .customModals;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

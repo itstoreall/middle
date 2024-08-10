@@ -7,9 +7,12 @@ import AboutBlock from './AboutBlock';
 import EmploymentBlock from './EmploymentBlock';
 import EducationBlock from './EducationBlock';
 import s from './Resume.module.scss';
+import useModals from '../../../hooks/useModal';
 
 const ResumeContent = () => {
   const data = useData();
+
+  const { setModal, modaContentEnum } = useModals();
 
   if (!data) return null;
 
@@ -53,6 +56,14 @@ const ResumeContent = () => {
         <h2 className={s.title}>{education.label}</h2>
         <EducationBlock />
       </section>
+
+      {/* <section className={s.certificatSection}>
+        <h2 className={s.title}>{'certificat title'}</h2>
+        <button onClick={() => setModal(modaContentEnum.CERTIFICATE)}>
+          CERT
+        </button>
+        <button onClick={() => setModal(modaContentEnum.SECOND)}>SECOND</button>
+      </section> */}
     </>
   );
 };

@@ -3,17 +3,20 @@ import * as gc from '../config/global';
 import Layout from '../components/Layout';
 import Resume from '../components/Pages/Resume/Resume';
 import Portfolio from '../components/Pages/Portfolio';
+import { ModalsProvider } from '../components/Modal/context';
 
 const { resume, portfolio } = gc.page;
 
 const AppRoutes = () => (
   <HashRouter>
-    <Routes>
-      <Route path={resume.path} element={<Layout />}>
-        <Route index element={<Resume />} />
-        <Route path={portfolio.path} element={<Portfolio />} />
-      </Route>
-    </Routes>
+    <ModalsProvider>
+      <Routes>
+        <Route path={resume.path} element={<Layout />}>
+          <Route index element={<Resume />} />
+          <Route path={portfolio.path} element={<Portfolio />} />
+        </Route>
+      </Routes>
+    </ModalsProvider>
   </HashRouter>
 );
 
