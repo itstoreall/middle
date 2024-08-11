@@ -57,13 +57,13 @@ const ResumeContent = () => {
         <EducationBlock />
       </section>
 
-      {/* <section className={s.certificatSection}>
-        <h2 className={s.title}>{'certificat title'}</h2>
+      <section className={s.certificateSection}>
+        <h2 className={s.title}>{'certificate title'}</h2>
         <button onClick={() => setModal(modaContentEnum.CERTIFICATE)}>
           CERT
         </button>
         <button onClick={() => setModal(modaContentEnum.SECOND)}>SECOND</button>
-      </section> */}
+      </section>
     </>
   );
 };

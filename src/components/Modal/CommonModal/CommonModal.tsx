@@ -5,7 +5,7 @@ import { CommonModalProps } from '../types';
 import s from './CommonModal.module.scss';
 
 const CommonModal = (props: CommonModalProps) => {
-  const { children, customStyle, closeButton } = props;
+  const { children, customStyle, CloseButton } = props;
 
   const [isClosing, setIsClosing] = useState(false);
 
@@ -33,9 +33,8 @@ const CommonModal = (props: CommonModalProps) => {
   return (
     <div className={modalStyle} onMouseDown={() => handleClose()}>
       <div className={s.modal} onMouseDown={e => e.stopPropagation()}>
-        <button className={s.closeButton} onClick={handleClose}>
-          {closeButton ? closeButton() : null}
-        </button>
+        {CloseButton ? <CloseButton {...{ handleClose }} /> : null}
+
         {children}
       </div>
     </div>

@@ -1,18 +1,21 @@
-.second {
-  &.second {
-    background-color: yellow;
+@import '../../../styles/';
 
-    .modal {
-      position: relative;
-      background-color: palevioletred;
+button.closeButton {
+  @extend %extends-flex-center;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  padding: 10px;
+  width: 30px;
+  padding: 10px;
+  background-color: tomato;
+  cursor: pointer;
+}
 
-      .closeButton {
-        top: 40px;
-        left: 40px;
-        width: 50px;
-        height: 50px;
-        background-color: greenyellow;
-      }
-    }
-  }
+// ------ Modal Content:
+
+div.modalContent {
+  padding: 10px;
+  background-color: teal;
+  color: white;
 }

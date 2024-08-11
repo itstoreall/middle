@@ -1,6 +1,7 @@
 import { createContext, useEffect, useMemo, useState } from 'react';
 import { ModalContextProps, ModalsProviderProps } from '../types';
 import { ModalContent } from '../enum';
+import RenderModal from '../index';
 
 const ModalsContext = createContext<ModalContextProps | undefined>(undefined);
 
@@ -15,7 +16,8 @@ export const ModalsProvider = ({ children }: ModalsProviderProps) => {
     return {
       modal,
       setModal,
-      modaContentEnum: ModalContent
+      modaContentEnum: ModalContent,
+      RenderModal
     };
   }, [modal]);
 
