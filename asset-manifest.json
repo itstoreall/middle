@@ -1,8 +1,13 @@
 {
   "files": {
-    "main.css": "/middle/static/css/main.522b4d06.css",
-    "main.js": "/middle/static/js/main.b202009e.js",
+    "main.css": "/middle/static/css/main.b0db40b3.css",
+    "main.js": "/middle/static/js/main.197dfbca.js",
     "static/media/avatar.jpg": "/middle/static/media/avatar.c4a6f8cb00532a2331ad.jpg",
+    "static/media/certificate_goit_fullstack.jpg": "/middle/static/media/certificate_goit_fullstack.1f039d9dd19abe2eaa3f.jpg",
+    "static/media/certificate_diia_blockchain_modul_3.jpg": "/middle/static/media/certificate_diia_blockchain_modul_3.9d89115fb0432215b78a.jpg",
+    "static/media/certificate_diia_blockchain_modul_1.jpg": "/middle/static/media/certificate_diia_blockchain_modul_1.b2f1944ce1d53cf27535.jpg",
+    "static/media/certificate_diia_blockchain_modul_4.jpg": "/middle/static/media/certificate_diia_blockchain_modul_4.c7bb13cae198b24c9394.jpg",
+    "static/media/certificate_diia_blockchain_modul_2.jpg": "/middle/static/media/certificate_diia_blockchain_modul_2.ec673a9d519ce66e8d0c.jpg",
     "static/media/frontend_02.png": "/middle/static/media/frontend_02.e22cdea0fe8faf959962.png",
     "static/media/frontend_04.png": "/middle/static/media/frontend_04.b71ba73cab6456b53b6e.png",
     "static/media/fullstack_01.png": "/middle/static/media/fullstack_01.fc690d3a07b614106a08.png",
@@ -11,11 +16,11 @@
     "static/media/frontend_03.png": "/middle/static/media/frontend_03.936c8b290fa109b4d597.png",
     "static/media/frontend_01.png": "/middle/static/media/frontend_01.5c40c8ec32f91e52983b.png",
     "index.html": "/middle/index.html",
-    "main.522b4d06.css.map": "/middle/static/css/main.522b4d06.css.map",
-    "main.b202009e.js.map": "/middle/static/js/main.b202009e.js.map"
+    "main.b0db40b3.css.map": "/middle/static/css/main.b0db40b3.css.map",
+    "main.197dfbca.js.map": "/middle/static/js/main.197dfbca.js.map"
   },
   "entrypoints": [
-    "static/css/main.522b4d06.css",
-    "static/js/main.b202009e.js"
+    "static/css/main.b0db40b3.css",
+    "static/js/main.197dfbca.js"
   ]
 }
