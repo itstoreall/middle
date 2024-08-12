@@ -184,6 +184,9 @@
       }
     ]
   },
+  "certificates": {
+    "label": "certificates"
+  },
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Collection of some of my projects"

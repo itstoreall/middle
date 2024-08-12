@@ -76,6 +76,10 @@ export type Education = {
   set: Subject[];
 };
 
+export type Certificates = {
+  label: string;
+};
+
 export type Portfolio = {
   title: string;
   subtitle: string;
@@ -111,5 +115,6 @@ export type Data = {
   portfolio: Portfolio;
   employment: Employment;
   education: Education;
+  certificates: Certificates;
   resume_pdf_url: string;
 } & ProjectData;

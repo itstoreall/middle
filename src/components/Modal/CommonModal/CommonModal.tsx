@@ -24,7 +24,6 @@ const CommonModal = (props: CommonModalProps) => {
     <div className={modalStyle} onMouseDown={() => closeModal()}>
       <div className={s.modal} onMouseDown={e => e.stopPropagation()}>
         {CloseButton ? <CloseButton {...{ closeModal }} /> : null}
-
         {children}
       </div>
     </div>

@@ -1,24 +1,17 @@
+import { useState } from 'react';
 import useModal from '../../../hooks/useModal';
-// import { CloseButtonProps } from '../types';
+import { white } from '../../../styles/vars';
 import sert_01_goit from '../../../assets/images/certificate_goit_fullstack.jpg';
 import sert_02_diia from '../../../assets/images/certificate_diia_blockchain_modul_1.jpg';
 import sert_03_diia from '../../../assets/images/certificate_diia_blockchain_modul_2.jpg';
 import sert_04_diia from '../../../assets/images/certificate_diia_blockchain_modul_3.jpg';
 import sert_05_diia from '../../../assets/images/certificate_diia_blockchain_modul_4.jpg';
+import ArrowIcon from '../../../assets/icons/ArrowIcon';
 import CommonModal from '../CommonModal/CommonModal';
 import s from './CertificateModal.module.scss';
-import { useState } from 'react';
-
-// const CloseButton = ({ closeModal }: CloseButtonProps) => (
-//   <button className={s.closeButton} onClick={closeModal} title={'close'}>
-//     <span className={s.closeButtonContent}>
-//       <span />
-//     </span>
-//   </button>
-// );
 
 const Slider = () => {
-  const [current, setCurrent] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
     sert_01_goit,
@@ -28,36 +21,44 @@ const Slider = () => {
     sert_05_diia
   ];
 
-  console.log(current);
-
   const nextSlide = () => {
-    setCurrent(prev => (prev + 1) % images.length);
+    setCurrentSlide(prev => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
-    setCurrent(prev => (prev - 1 + images.length) % images.length);
+    setCurrentSlide(prev => (prev - 1 + images.length) % images.length);
   };
 
   return (
     <div className={s.slider}>
       <button className={`${s.sliderButton} ${s.prev}`} onClick={prevSlide}>
-        &#10094;
+        <span className={s.buttonConent}>
+          <ArrowIcon color={'white'} />
+        </span>
       </button>
 
-      <div className={s.sliderImages}>
+      <ul className={s.slideList}>
         {images.map((image, index) => {
-          const activeStyle = index === current ? s.active : '';
-          const sliderImage = `${s.sliderImage} ${activeStyle}`;
+          const activeStyle = index === currentSlide ? s.active : '';
+          const sliderImage = `${s.slideItem} ${activeStyle}`;
           return (
-            <div className={sliderImage} key={index}>
-              <img src={image} alt={`Slide ${index + 1}`} />
-            </div>
+            <li className={sliderImage} key={index}>
+              <div className={s.thumb}>
+                <img
+                  className={s.slide}
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                />
+              </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       <button className={`${s.sliderButton} ${s.next}`} onClick={nextSlide}>
-        &#10095;
+        <span className={s.buttonConent}>
+          <ArrowIcon color={white} />
+        </span>
       </button>
     </div>
   );

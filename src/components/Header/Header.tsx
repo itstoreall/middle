@@ -9,7 +9,7 @@ import s from './Header.module.scss';
 const { Label } = containerEnum;
 
 const CloseModalButton = ({ closeModal }: CloseButtonProps) => (
-  <button className={s.closeModalButton} onClick={closeModal} title={'close'}>
+  <button className={s.closeModalButton} onClick={closeModal}>
     <span className={s.buttonContent}>
       <span>{'close'}</span>
     </span>
@@ -21,6 +21,15 @@ const Header = ({ data }: gt.DataProps) => {
 
   const { level } = data.author;
 
+  const buttonHandler = () => {
+    switch (isCertificateModal) {
+      case true:
+        return <CloseModalButton {...{ closeModal }} />;
+      default:
+        return <NavButton />;
+    }
+  };
+
   return (
     <div className={s.headerBlock}>
       <Container label={Label.PAGE}>
@@ -28,11 +37,7 @@ const Header = ({ data }: gt.DataProps) => {
           <h1>{level}</h1>
           <div className={s.buttonBlock}>
             <DownloadPDF url={data.resume_pdf_url} />
-            {isCertificateModal ? (
-              <CloseModalButton {...{ closeModal }} />
-            ) : (
-              <NavButton />
-            )}
+            {buttonHandler()}
           </div>
         </div>
       </Container>

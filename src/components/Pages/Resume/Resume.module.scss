@@ -70,7 +70,8 @@ section {
   &.softSection,
   &.aboutSection,
   &.employmentSection,
-  &.educationSection {
+  &.educationSection,
+  &.certificateSection {
     padding: 0 0 20px;
 
     > h2.title {
@@ -318,6 +319,33 @@ section {
           }
         }
       }
+    }
+  }
+
+  // ---
+
+  .headerMonoButton {
+    min-width: 154px;
+    height: 26px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 15px;
+    transition: $ease03s;
+
+    @include media-screen-orientation('max', $tablet - 0.1) {
+      padding-top: 1px;
+    }
+  }
+
+  > button.closeModalButton {
+    @extend .headerMonoButton;
+    color: $dark;
+    background-color: $middleGrey;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $lightGrey;
     }
   }
 }

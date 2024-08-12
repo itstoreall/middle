@@ -23,8 +23,6 @@ const Layout = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.layout}>
-        <RenderModal />
-
         <header ref={headerRef}>
           <Header {...{ data }} />
         </header>
@@ -38,6 +36,8 @@ const Layout = () => {
         <footer>
           <Footer {...{ data }} />
         </footer>
+
+        <RenderModal />
       </div>
     </div>
   );

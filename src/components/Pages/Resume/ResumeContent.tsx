@@ -14,9 +14,12 @@ const ResumeContent = () => {
 
   const { openModal, modaContentEnum } = useModals();
 
+  const seeCertificates = () => openModal(modaContentEnum.CERTIFICATE);
+
   if (!data) return null;
 
-  const { author, skills, stack, soft, about, employment, education } = data;
+  const { author, skills, stack, soft, about } = data;
+  const { employment, education, certificates } = data;
   const { firstName, secondName, profession } = author;
 
   return (
@@ -58,12 +61,12 @@ const ResumeContent = () => {
       </section>
 
       <section className={s.certificateSection}>
-        <h2 className={s.title}>{'certificate title'}</h2>
-        <button onClick={() => openModal(modaContentEnum.CERTIFICATE)}>
-          CERT
-        </button>
-        <button onClick={() => openModal(modaContentEnum.SECOND)}>
-          000000
+        <h2 className={s.title}>{certificates.label}</h2>
+
+        <button className={s.closeModalButton} onClick={seeCertificates}>
+          <span className={s.buttonContent}>
+            <span>{'see certificates'}</span>
+          </span>
         </button>
       </section>
     </>
