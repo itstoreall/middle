@@ -3,8 +3,8 @@ import { CloseButtonProps } from '../types';
 import CommonModal from '../CommonModal/CommonModal';
 import s from './SecondModal.module.scss';
 
-const CloseButton = ({ handleClose }: CloseButtonProps) => (
-  <button className={s.closeButton} onClick={handleClose} title={'close'}>
+const CloseButton = ({ closeModal }: CloseButtonProps) => (
+  <button className={s.closeButton} onClick={closeModal} title={'close'}>
     <span className={s.closeButtonContent}>x</span>
   </button>
 );

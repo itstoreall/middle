@@ -1,3 +1,5 @@
+import useModal from '../../hooks/useModal';
+import { CloseButtonProps } from '../Modal/types';
 import * as gt from '../../types/global';
 import Container, { containerEnum } from '../Container';
 import DownloadPDF from '../PDF/Download';
@@ -6,7 +8,17 @@ import s from './Header.module.scss';
 
 const { Label } = containerEnum;
 
+const CloseModalButton = ({ closeModal }: CloseButtonProps) => (
+  <button className={s.closeModalButton} onClick={closeModal} title={'close'}>
+    <span className={s.buttonContent}>
+      <span>{'close'}</span>
+    </span>
+  </button>
+);
+
 const Header = ({ data }: gt.DataProps) => {
+  const { closeModal, isCertificateModal } = useModal();
+
   const { level } = data.author;
 
   return (
@@ -16,7 +28,11 @@ const Header = ({ data }: gt.DataProps) => {
           <h1>{level}</h1>
           <div className={s.buttonBlock}>
             <DownloadPDF url={data.resume_pdf_url} />
-            <NavButton />
+            {isCertificateModal ? (
+              <CloseModalButton {...{ closeModal }} />
+            ) : (
+              <NavButton />
+            )}
           </div>
         </div>
       </Container>

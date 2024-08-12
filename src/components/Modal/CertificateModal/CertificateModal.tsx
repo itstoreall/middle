@@ -1,5 +1,5 @@
 import useModal from '../../../hooks/useModal';
-import { CloseButtonProps } from '../types';
+// import { CloseButtonProps } from '../types';
 import sert_01_goit from '../../../assets/images/certificate_goit_fullstack.jpg';
 import sert_02_diia from '../../../assets/images/certificate_diia_blockchain_modul_1.jpg';
 import sert_03_diia from '../../../assets/images/certificate_diia_blockchain_modul_2.jpg';
@@ -9,13 +9,13 @@ import CommonModal from '../CommonModal/CommonModal';
 import s from './CertificateModal.module.scss';
 import { useState } from 'react';
 
-const CloseButton = ({ handleClose }: CloseButtonProps) => (
-  <button className={s.closeButton} onClick={handleClose} title={'close'}>
-    <span className={s.closeButtonContent}>
-      <span />
-    </span>
-  </button>
-);
+// const CloseButton = ({ closeModal }: CloseButtonProps) => (
+//   <button className={s.closeButton} onClick={closeModal} title={'close'}>
+//     <span className={s.closeButtonContent}>
+//       <span />
+//     </span>
+//   </button>
+// );
 
 const Slider = () => {
   const [current, setCurrent] = useState(0);
@@ -67,7 +67,7 @@ const CertificateModal = () => {
   const { CERTIFICATE } = useModal().modaContentEnum;
 
   return (
-    <CommonModal customStyle={CERTIFICATE} {...{ CloseButton }}>
+    <CommonModal customStyle={CERTIFICATE}>
       <div className={s.modalContent}>
         <Slider />
       </div>

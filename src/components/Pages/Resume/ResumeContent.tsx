@@ -12,7 +12,7 @@ import useModals from '../../../hooks/useModal';
 const ResumeContent = () => {
   const data = useData();
 
-  const { setModal, modaContentEnum } = useModals();
+  const { openModal, modaContentEnum } = useModals();
 
   if (!data) return null;
 
@@ -59,10 +59,12 @@ const ResumeContent = () => {
 
       <section className={s.certificateSection}>
         <h2 className={s.title}>{'certificate title'}</h2>
-        <button onClick={() => setModal(modaContentEnum.CERTIFICATE)}>
+        <button onClick={() => openModal(modaContentEnum.CERTIFICATE)}>
           CERT
         </button>
-        <button onClick={() => setModal(modaContentEnum.SECOND)}>SECOND</button>
+        <button onClick={() => openModal(modaContentEnum.SECOND)}>
+          000000
+        </button>
       </section>
     </>
   );

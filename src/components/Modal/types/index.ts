@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { ReactNode } from 'react';
 import { ModalContent } from '../enum';
 
 export type ModalsProviderProps = {
@@ -7,15 +7,18 @@ export type ModalsProviderProps = {
 
 export type ModalContextProps = {
   modal: ModalContent | null;
-  setModal: Dispatch<SetStateAction<ModalContent | null>>;
+  openModal: (val: ModalContent) => void;
+  isClosing: boolean;
+  closeModal(): void;
   modaContentEnum: typeof ModalContent;
   RenderModal: () => JSX.Element;
+  isCertificateModal: boolean;
 };
 
-export type CloseButtonProps = { handleClose: () => void };
+export type CloseButtonProps = { closeModal: () => void };
 
 export type CommonModalProps = {
   children: ReactNode;
   customStyle: string;
-  CloseButton?: ({ handleClose }: CloseButtonProps) => JSX.Element;
+  CloseButton?: ({ closeModal }: CloseButtonProps) => JSX.Element;
 };

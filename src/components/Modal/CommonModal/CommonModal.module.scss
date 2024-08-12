@@ -4,6 +4,8 @@
 
 .customModals {
   &.certificate {
+    z-index: 30;
+
     > div.modal {
       position: relative;
       width: 100%;
