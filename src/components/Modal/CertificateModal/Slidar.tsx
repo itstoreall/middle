@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { SwipeEvent } from '../../../types/global';
 import { white } from '../../../styles/vars';
 import sert_01_goit from '../../../assets/images/certificate_goit_fullstack.jpg';
 import sert_02_diia from '../../../assets/images/certificate_diia_blockchain_modul_1.jpg';
@@ -8,16 +9,21 @@ import sert_05_diia from '../../../assets/images/certificate_diia_blockchain_mod
 import ArrowIcon from '../../../assets/icons/ArrowIcon';
 import s from './CertificateModal.module.scss';
 
+const images = [
+  sert_01_goit,
+  sert_02_diia,
+  sert_03_diia,
+  sert_04_diia,
+  sert_05_diia
+];
+
 const Slider = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const images = [
-    sert_01_goit,
-    sert_02_diia,
-    sert_03_diia,
-    sert_04_diia,
-    sert_05_diia
-  ];
+  const startSwipe = useRef(0);
+  const endSwipe = useRef(0);
+
+  // ------
 
   const nextSlide = () => {
     setActiveSlide(prev => (prev + 1) % images.length);
@@ -27,8 +33,24 @@ const Slider = () => {
     setActiveSlide(prev => (prev - 1 + images.length) % images.length);
   };
 
+  const swipeStart = (e: SwipeEvent) => {
+    startSwipe.current = e.changedTouches[0].screenX;
+  };
+
+  const swipeEnd = (e: SwipeEvent) => {
+    endSwipe.current = e.changedTouches[0].screenX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    if (startSwipe.current - endSwipe.current > 50) nextSlide();
+    if (startSwipe.current - endSwipe.current < -50) prevSlide();
+  };
+
+  // ------
+
   return (
-    <div className={s.slider}>
+    <div className={s.slider} onTouchStart={swipeStart} onTouchEnd={swipeEnd}>
       <button className={`${s.sliderButton} ${s.prev}`} onClick={prevSlide}>
         <span className={s.buttonConent}>
           <ArrowIcon color={'white'} />
@@ -59,7 +81,7 @@ const Slider = () => {
                 <img
                   className={s.slide}
                   src={image}
-                  alt={`Slide ${index + 1}`}
+                  alt={`slide ${index + 1}`}
                 />
               </div>
             </li>
