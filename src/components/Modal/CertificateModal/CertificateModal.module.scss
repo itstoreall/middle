@@ -1,24 +1,23 @@
 @import '../../../styles';
 
-$slideWidth: 480px;
-$slideHeight: 680px;
+$sliderWidth: 480px;
 
 div.modalContent {
   @extend %extends-hide-scrollbar;
-  // background-color: yellowgreen;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: calc(100svh - 50px);
   overflow-y: scroll;
 
   .slider {
-    position: relative;
-    height: 100svh;
-
     > ul.slideList {
       position: absolute;
       top: 0;
       width: 100%;
-      max-width: 480px;
+      max-width: $sliderWidth;
 
-      @include media-screen-orientation('min', 480px) {
+      @include media-screen-orientation('min', $sliderWidth) {
         left: 50%;
         transform: translate(-240px);
       }
@@ -26,7 +25,6 @@ div.modalContent {
       > li.slideItem {
         position: absolute;
         top: 0;
-        padding-top: 50px;
         transition: opacity 0.5s ease-in-out;
         opacity: 0;
 
@@ -43,50 +41,71 @@ div.modalContent {
       }
     }
 
-    .sliderButton {
-      position: fixed;
-      padding-top: 50px;
-      width: 40px;
-      height: 100%;
-      z-index: 1;
-      // background-color: teal;
+    > button.sliderButton {
+      display: none;
 
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-
-      @include media-screen-orientation('min', 580px) {
+      @include media-screen-orientation('min', $sliderWidth + 80) {
+        position: fixed;
+        display: flex;
         align-items: center;
-        width: 50px;
+        max-width: 100px;
         height: 100%;
+        z-index: 1;
+      }
+
+      @include media-screen-orientation('min', $sliderWidth + 200) {
+        width: 100%;
+      }
+
+      &.prev {
+        right: calc(50% + 240px);
+      }
+
+      &.next {
+        left: calc(50% + 240px);
+
+        > span.buttonConent > svg {
+          transform: rotate(180deg);
+        }
       }
 
       > span.buttonConent {
         @extend %extends-flex-center;
         width: 100%;
-        height: 40px;
-        background-color: rgba(0, 0, 0, 0.5);
+        height: 50px;
+        transform: translateY(-25px);
+        // background-color: rgba(0, 0, 0, 0.5); // *
         cursor: pointer;
 
         > svg {
-          width: 30px;
-          height: 30px;
+          width: 40px;
+          height: 40px;
         }
 
-        @include media-screen-orientation('min', 580px) {
-          height: 100%;
+        @include media-screen-orientation('min', $sliderWidth + 200) {
+          height: 100px;
         }
       }
+    }
 
-      &.prev {
-        left: 0;
-      }
+    > ul.dotList {
+      position: fixed;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+      z-index: 2;
 
-      &.next {
-        right: 0;
+      > li.dotItem {
+        width: 15px;
+        height: 15px;
+        background-color: $dark;
+        border-radius: 2px 2px 0 0;
+        transition: background-color $ease03s;
 
-        > span.buttonConent > svg {
-          transform: rotate(180deg);
+        &.active {
+          background-color: $selection;
         }
       }
     }
