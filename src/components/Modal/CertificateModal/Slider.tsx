@@ -43,8 +43,11 @@ const Slider = () => {
   };
 
   const handleSwipe = () => {
-    if (startSwipe.current - endSwipe.current > 50) nextSlide();
-    if (startSwipe.current - endSwipe.current < -50) prevSlide();
+    const swipeValue = 25;
+    const start = startSwipe.current;
+    const end = endSwipe.current;
+    if (start - end > swipeValue) nextSlide();
+    if (start - end < -swipeValue) prevSlide();
   };
 
   // ------
@@ -73,16 +76,13 @@ const Slider = () => {
 
       <ul className={s.slideList}>
         {images.map((image, index) => {
+          const alt = `slide ${index + 1}`;
           const activeStyle = index === activeSlide ? s.active : '';
           const sliderImage = `${s.slideItem} ${activeStyle}`;
           return (
             <li className={sliderImage} key={index}>
               <div className={s.thumb}>
-                <img
-                  className={s.slide}
-                  src={image}
-                  alt={`slide ${index + 1}`}
-                />
+                <img className={s.slide} src={image} alt={alt} />
               </div>
             </li>
           );

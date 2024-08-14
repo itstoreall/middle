@@ -1,6 +1,6 @@
 import useModal from '../../../hooks/useModal';
 import CommonModal from '../CommonModal/CommonModal';
-import Slider from './Slidar';
+import Slider from './Slider';
 import s from './CertificateModal.module.scss';
 
 const CertificateModal = () => {
