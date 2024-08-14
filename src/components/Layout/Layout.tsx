@@ -12,16 +12,18 @@ import s from './Layout.module.scss';
 
 const Layout = () => {
   const [data, setData] = useState<Data | null>(null);
-  const headerRef = useScrollToTop();
 
-  const { RenderModal } = useModals();
+  const { modal, RenderModal } = useModals();
+  const headerRef = useScrollToTop();
 
   useEffect(() => content && setData(content), [content]);
 
   if (!data) return null;
 
+  const wrapperStyle = `${s.wrapper} ${modal ? '' : s.scroll}`;
+
   return (
-    <div className={s.wrapper}>
+    <div className={wrapperStyle}>
       <div className={s.layout}>
         <header ref={headerRef}>
           <Header {...{ data }} />
