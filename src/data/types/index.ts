@@ -80,6 +80,8 @@ export type Certificates = {
   label: string;
 };
 
+// ------ Portfolio:
+
 export type Portfolio = {
   title: string;
   subtitle: string;
@@ -104,7 +106,13 @@ export type Projects = {
   backend: Project;
 };
 
-export type ProjectData = { projects: Projects };
+// ------ Toasts:
+
+export type ToastPosition = { msg: string };
+
+export type Toasts = { position: ToastPosition };
+
+// ------ Data:
 
 export type Data = {
   author: Author & Social;
@@ -116,5 +124,8 @@ export type Data = {
   employment: Employment;
   education: Education;
   certificates: Certificates;
+  toast: Toasts;
   resume_pdf_url: string;
 } & ProjectData;
+
+export type ProjectData = { projects: Projects };

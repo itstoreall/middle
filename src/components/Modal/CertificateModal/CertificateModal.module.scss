@@ -94,14 +94,15 @@ div.modalContent {
       display: flex;
       justify-content: center;
       gap: 15px;
+      padding-bottom: 10px;
       width: 100%;
       z-index: 2;
 
       > li.dotItem {
-        width: 15px;
-        height: 15px;
+        width: 8px;
+        height: 8px;
         background-color: $dark;
-        border-radius: 2px 2px 0 0;
+        border-radius: 50%;
         transition: background-color $ease03s;
 
         &.active {

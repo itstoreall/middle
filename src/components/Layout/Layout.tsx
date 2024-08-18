@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import useModals from '../../hooks/useModal';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { DataProvider } from '../../context/data';
+import { ToastProvider } from '../../context/toast';
 import { Data } from '../../data/types';
 import content from '../../data';
 import Header from '../Header';
@@ -31,7 +32,9 @@ const Layout = () => {
 
         <main>
           <DataProvider {...{ data }}>
-            <Outlet />
+            <ToastProvider>
+              <Outlet />
+            </ToastProvider>
           </DataProvider>
         </main>
 

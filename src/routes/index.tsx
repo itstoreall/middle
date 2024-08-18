@@ -1,9 +1,9 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { ModalsProvider } from '../components/Modal/context';
 import * as gc from '../config/global';
 import Layout from '../components/Layout';
-import Resume from '../components/Pages/Resume/Resume';
+import Resume from '../components/Pages/Resume';
 import Portfolio from '../components/Pages/Portfolio';
-import { ModalsProvider } from '../components/Modal/context';
 
 const { resume, portfolio } = gc.page;
 
