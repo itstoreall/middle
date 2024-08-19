@@ -11,9 +11,12 @@ const Resume = () => {
 
   useEffect(() => {
     addToast('position');
+
+    /*
     setTimeout(() => {
       addToast('error');
     }, 2000);
+    // */
   }, []);
 
   return (

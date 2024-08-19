@@ -107,7 +107,7 @@ section {
       .progressBox {
         > div {
           border-radius: 2px;
-          @include box-shadow(3px, $black);
+          @include box-shadow-offset(3px, $black);
         }
       }
     }
@@ -124,7 +124,7 @@ section {
         background-color: $black;
         border: 1px solid $darkGrey;
         border-radius: 2px;
-        @include box-shadow(3px, $black);
+        @include box-shadow-offset(3px, $black);
 
         .setBox {
           &:not(:last-child) {
@@ -174,11 +174,11 @@ section {
       @include before(22px, 100%, $darkGrey, $ease03s03s);
 
       &::before {
-        @include box-shadow(3px, $black);
+        @include box-shadow-offset(3px, $black);
       }
 
       &:hover {
-        @include before(22px, 100%, $selection);
+        @include before(22px, 100%, $selectMiddle);
       }
 
       > span.skill {
@@ -202,7 +202,7 @@ section {
         max-height: 300px;
         border-radius: 2px;
         overflow: hidden;
-        @include box-shadow(3px, $black);
+        @include box-shadow-offset(3px, $black);
 
         @include media-screen-orientation('min', $tablet - 200) {
           width: 200px;
@@ -272,7 +272,7 @@ section {
           }
 
           &.term {
-            color: $selection;
+            color: $selectMiddle;
           }
         }
       }
@@ -315,7 +315,7 @@ section {
       &:hover {
         > span {
           &.term {
-            color: $selection;
+            color: $selectMiddle;
           }
         }
       }
@@ -340,7 +340,7 @@ section {
 
   > button.closeModalButton {
     @extend .headerMonoButton;
-    color: $dark;
+    color: $bg;
     background-color: $middleGrey;
     cursor: pointer;
 

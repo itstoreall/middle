@@ -57,7 +57,7 @@ section.projectSection {
 
           .thumb {
             overflow: hidden;
-            @include box-shadow(3px, $black);
+            @include box-shadow-offset(3px, $black);
             border: 1px solid $darkGrey;
             border-radius: 2px;
 
@@ -117,7 +117,7 @@ section.projectSection {
               font-size: 10px;
               font-weight: 700;
               text-transform: uppercase;
-              color: $dark;
+              color: $bg;
               background-color: $middleGrey;
               border-radius: 15px;
               transition: $ease03s;

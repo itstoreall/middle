@@ -126,6 +126,7 @@ export type Data = {
   certificates: Certificates;
   toast: Toasts;
   resume_pdf_url: string;
+  message_linkedin_url: string;
 } & ProjectData;
 
 export type ProjectData = { projects: Projects };

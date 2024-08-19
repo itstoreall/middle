@@ -39,12 +39,12 @@
 
 %extends-text-selection {
   &::selection {
-    background-color: $selection;
+    background-color: $selectMiddle;
     color: $black;
   }
 
   &::-moz-selection {
-    background-color: $selection;
+    background-color: $selectMiddle;
     color: $black;
   }
 }

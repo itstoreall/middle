@@ -298,10 +298,11 @@
       ]
     }
   },
-  "resume_pdf_url": "https://itstoreall.github.io/middle/resume_serhii_stanislav_middle.pdf",
   "toast": {
     "position": {
       "msg": "Looking for a Frontend Developer Position****Hello! Thank you for taking the time to review my resume. Most likely, you are currently looking for a talented Frontend Developer to join your team. I am happy to express my interest in this opportunity.****I have a real passion for building intuitive and dynamic user interfaces. Over the years, I've honed my skills in web development and design, and I'm excited about the possibility of bringing that expertise to your projects."
     }
-  }
+  },
+  "resume_pdf_url": "https://itstoreall.github.io/middle/resume_serhii_stanislav_middle.pdf",
+  "message_linkedin_url": "https://www.linkedin.com/messaging/thread/new/?recipient=serhiistanislav"
 }

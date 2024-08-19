@@ -53,7 +53,7 @@
         > a {
           @extend %extends-flex-center;
           @extend .headerMonoButton;
-          color: $dark;
+          color: $bg;
           background-color: $middleGrey;
 
           &:hover {
@@ -67,11 +67,11 @@
       > button.closeModalButton {
         @extend .headerMonoButton;
         color: $white;
-        background-color: $selection;
+        background-color: $selectMiddle;
         cursor: pointer;
 
         &:hover {
-          background-color: $error;
+          background-color: $selectLight;
         }
       }
     }

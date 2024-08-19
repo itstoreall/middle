@@ -101,12 +101,12 @@ div.modalContent {
       > li.dotItem {
         width: 8px;
         height: 8px;
-        background-color: $dark;
+        background-color: $bg;
         border-radius: 50%;
         transition: background-color $ease03s;
 
         &.active {
-          background-color: $selection;
+          background-color: $selectMiddle;
         }
       }
     }
