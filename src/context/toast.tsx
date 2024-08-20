@@ -7,6 +7,7 @@ import ToastContainer from '../components/Toast/ToastContainer';
 
 const initContext = {
   addToast: () => console.log(),
+  updateToastContent: () => console.log(),
   removeToast: () => console.log()
 };
 
@@ -22,21 +23,33 @@ export const ToastProvider: FC<gt.ChildrenProps> = ({ children }) => {
     const msgDisplayDelay = 0;
     setToasts(prevToasts => [{ id, msg: '', label }, ...prevToasts]);
     setTimeout(() => {
-      const msg = data?.toast.position.msg || 'Hello!';
+      const msg = data?.toast.position.msg.init || 'Hello!';
       setToasts(prev =>
         prev.map(toast => (toast.id === id ? { ...toast, msg } : toast))
       );
     }, msgDisplayDelay);
   }, []);
 
+  const updateToastContent = (id: string, msg: string) => {
+    setToasts(prev =>
+      prev.map(toast => (toast.id === id ? { ...toast, msg } : toast))
+    );
+  };
+
   const removeToast = useCallback((id: string) => {
     setToasts(prevToasts => prevToasts.filter(toast => toast.id !== id));
   }, []);
 
+  const value = { addToast, updateToastContent, removeToast };
+
   return (
-    <ToastContext.Provider value={{ addToast, removeToast }}>
+    <ToastContext.Provider value={value}>
       {children}
-      <ToastContainer toasts={toasts} removeToast={removeToast} />
+      <ToastContainer
+        toasts={toasts}
+        updateToastContent={updateToastContent}
+        removeToast={removeToast}
+      />
     </ToastContext.Provider>
   );
 };

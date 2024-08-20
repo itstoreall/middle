@@ -108,7 +108,7 @@ export type Projects = {
 
 // ------ Toasts:
 
-export type ToastPosition = { msg: string };
+export type ToastPosition = { msg: { init: string; details: string } };
 
 export type Toasts = { position: ToastPosition };
 

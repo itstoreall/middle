@@ -3,7 +3,9 @@ import { ToastContainerProps } from './types';
 import Toast from './Toast';
 import s from './Toast.module.scss';
 
-const ToastContainer: FC<ToastContainerProps> = ({ toasts, removeToast }) => {
+const ToastContainer: FC<ToastContainerProps> = props => {
+  const { toasts, updateToastContent, removeToast } = props;
+
   const [overflow, setOverflow] = useState('');
 
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -31,6 +33,7 @@ const ToastContainer: FC<ToastContainerProps> = ({ toasts, removeToast }) => {
             key={toast.id}
             label={toast.label}
             msg={toast.msg}
+            updateContent={(msg: string) => updateToastContent(toast.id, msg)}
             onClose={() => removeToast(toast.id)}
           />
         ))}

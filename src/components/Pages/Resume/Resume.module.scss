@@ -272,7 +272,7 @@ section {
           }
 
           &.term {
-            color: $selectMiddle;
+            color: $selectLight;
           }
         }
       }
@@ -315,7 +315,7 @@ section {
       &:hover {
         > span {
           &.term {
-            color: $selectMiddle;
+            color: $selectLight;
           }
         }
       }
