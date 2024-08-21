@@ -1,6 +1,6 @@
 import * as vars from '../../../styles/vars';
 
-const { selectLight, selectMiddle, selectDark, lightGrey, darkGrey } = vars;
+const { selectLight, selectMiddle, selectDark } = vars;
 
 // const currentColor = selectMiddle;
 
