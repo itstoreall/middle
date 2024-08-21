@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useLayoutEffect, useState } from 'react';
 import useModal from '../../../hooks/useModal';
+// import useApp from '../../../hooks/useApp';
 import useData from '../../../hooks/useData';
 import ProjectList from './ProjectList';
 import s from './Portfolio.module.scss';
 
 const PortfolioContent = () => {
   const [isProjects, setIsProjects] = useState(false);
+
+  // const app = useApp();
 
   const data = useData();
 
