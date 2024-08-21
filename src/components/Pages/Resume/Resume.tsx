@@ -8,8 +8,7 @@ import toastConfig from '../../Toast/config';
 const { position } = toastConfig.label;
 const { Label } = containerEnum;
 
-// const toastStartDelay = 120000;
-const toastStartDelay = 60000;
+const toastStartDelay = 120000;
 // const toastStartDelay = 2000;
 
 const Resume = () => {
@@ -17,12 +16,7 @@ const Resume = () => {
 
   useEffect(() => {
     setTimeout(() => addToast(position), toastStartDelay);
-
-    /*
-    setTimeout(() => {
-      addToast('error');
-    }, 15000);
-    // */
+    // setTimeout(() => addToast('error'), 15000); // *
   }, []);
 
   return (
