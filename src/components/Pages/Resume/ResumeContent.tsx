@@ -6,15 +6,11 @@ import SoftList from './SoftList';
 import AboutBlock from './AboutBlock';
 import EmploymentBlock from './EmploymentBlock';
 import EducationBlock from './EducationBlock';
+import CertificateBlock from './CertificateBlock';
 import s from './Resume.module.scss';
-import useModals from '../../../hooks/useModal';
 
 const ResumeContent = () => {
   const data = useData();
-
-  const { openModal, modaContentEnum } = useModals();
-
-  const seeCertificates = () => openModal(modaContentEnum.CERTIFICATE);
 
   if (!data) return null;
 
@@ -62,12 +58,7 @@ const ResumeContent = () => {
 
       <section className={s.certificateSection}>
         <h2 className={s.title}>{certificates.label}</h2>
-
-        <button className={s.closeModalButton} onClick={seeCertificates}>
-          <span className={s.buttonContent}>
-            <span>{'see certificates'}</span>
-          </span>
-        </button>
+        <CertificateBlock />
       </section>
     </>
   );

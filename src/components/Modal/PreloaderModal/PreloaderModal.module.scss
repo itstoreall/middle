@@ -1,0 +1,18 @@
+@import '../../../styles/';
+
+button.closeButton {
+  display: none;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+// ------ Modal Content:
+
+div.modalContent {
+  padding: 10px;
+  // background-color: teal;
+  color: white;
+}
