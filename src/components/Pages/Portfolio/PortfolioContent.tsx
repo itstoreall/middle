@@ -1,33 +1,25 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useLayoutEffect, useState } from 'react';
-import useModal from '../../../hooks/useModal';
-// import useApp from '../../../hooks/useApp';
+// import { useLayoutEffect } from 'react';
+// import usePreloader from '../../../hooks/usePreloader';
 import useData from '../../../hooks/useData';
 import ProjectList from './ProjectList';
 import s from './Portfolio.module.scss';
+import useApp from '../../../hooks/useApp';
 
 const PortfolioContent = () => {
-  const [isProjects, setIsProjects] = useState(false);
-
-  // const app = useApp();
+  // const { isLoading, startPreloader } = usePreloader();
 
   const data = useData();
+  const app = useApp();
 
-  const { openModal, modaContentEnum } = useModal();
+  // useLayoutEffect(() => {
+  //   startPreloader();
+  // }, []);
 
-  const startPreloader = () => openModal(modaContentEnum.PRELOADER);
-
-  useLayoutEffect(() => {
-    startPreloader();
-    setTimeout(() => setIsProjects(true), 500);
-  }, []);
-
-  if (!data) return null;
+  if (!data || app.isPending()) return null;
 
   const { portfolio, projects } = data;
   const { frontend, fullstack, backend } = projects;
-
-  if (!isProjects) return null;
 
   return (
     <>

@@ -1,13 +1,9 @@
 import useModal from '../../../hooks/useModal';
-import { CloseButtonProps } from '../types';
 import CommonModal from '../CommonModal/CommonModal';
 import Loader from '../../../assets/animations/Loader';
 import s from './PreloaderModal.module.scss';
 
-const CloseButton = ({ closeModal }: CloseButtonProps) => {
-  setTimeout(() => closeModal(), 1600);
-  return <></>;
-};
+const CloseButton = () => <></>;
 
 const ModalContent = () => (
   <div className={s.modalContent}>
@@ -16,7 +12,7 @@ const ModalContent = () => (
 );
 
 const PreloaderModal = () => {
-  const { PRELOADER } = useModal().modaContentEnum;
+  const { PRELOADER } = useModal().ModaContentEnum;
 
   return (
     <CommonModal customStyle={PRELOADER} {...{ CloseButton }}>

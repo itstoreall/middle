@@ -1,4 +1,5 @@
-import { FC, createContext, useState } from 'react';
+import { FC, createContext, useLayoutEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ChildrenProps } from '../types/global';
 
 enum StatusEnum {
@@ -27,8 +28,17 @@ const initContext = {
 
 export const AppContext = createContext<Context>(initContext);
 
+// --- Provider:
+
 export const AppProvider: FC<ChildrenProps> = ({ children }) => {
-  const [status, setStatus] = useState<StatusEnum>(StatusEnum.INIT);
+  const [status, setStatus] = useState<StatusEnum>(StatusEnum.PENDING);
+
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    handleStatus(StatusEnum.PENDING);
+    setTimeout(() => handleStatus(StatusEnum.INIT), 1800);
+  }, [location]);
 
   const handleStatus = (status: StatusEnum) => setStatus(status);
   const isInit = () => status === StatusEnum.INIT;

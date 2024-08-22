@@ -10,7 +10,7 @@ export type ModalContextProps = {
   openModal: (val: ModalContent) => void;
   isClosing: boolean;
   closeModal(): void;
-  modaContentEnum: typeof ModalContent;
+  ModaContentEnum: typeof ModalContent;
   RenderModal: () => JSX.Element;
   isCertificateModal: boolean;
 };

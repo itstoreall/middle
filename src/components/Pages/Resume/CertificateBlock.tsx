@@ -2,9 +2,9 @@ import useModal from '../../../hooks/useModal';
 import s from './Resume.module.scss';
 
 const CertificateBlock = () => {
-  const { openModal, modaContentEnum } = useModal();
+  const { openModal, ModaContentEnum } = useModal();
 
-  const seeCertificates = () => openModal(modaContentEnum.CERTIFICATE);
+  const seeCertificates = () => openModal(ModaContentEnum.CERTIFICATE);
 
   return (
     <button className={s.closeModalButton} onClick={seeCertificates}>

@@ -2,8 +2,6 @@ import * as vars from '../../../styles/vars';
 
 const { selectLight, selectMiddle, selectDark } = vars;
 
-// const currentColor = selectMiddle;
-
 const Loader = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'

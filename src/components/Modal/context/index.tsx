@@ -10,6 +10,8 @@ export const ModalsProvider = ({ children }: ModalsProviderProps) => {
   const [modal, setModal] = useState<ModalContent | null>(null);
   const [isClosing, setIsClosing] = useState(false);
 
+  const isDisallowedClose = modal === ModalContent.PRELOADER;
+
   useEffect(() => {
     document.body.style.overflow = modal ? 'unset' : 'hidden';
   }, [modal]);
@@ -21,6 +23,7 @@ export const ModalsProvider = ({ children }: ModalsProviderProps) => {
   const openModal = (val: ModalContent) => setModal(val);
 
   const closeModal = () => {
+    if (isDisallowedClose) return;
     setIsClosing(true);
     setTimeout(() => {
       setModal(null);
@@ -34,7 +37,7 @@ export const ModalsProvider = ({ children }: ModalsProviderProps) => {
       openModal,
       isClosing,
       closeModal,
-      modaContentEnum: ModalContent,
+      ModaContentEnum: ModalContent,
       RenderModal,
       isCertificateModal
     };
