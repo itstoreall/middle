@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useLayoutEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import useModals from '../../hooks/useModal';
 import useScrollToTop from '../../hooks/useScrollToTop';
 // import { DataProvider } from '../../context/data';
@@ -14,35 +14,41 @@ import s from './Layout.module.scss';
 import useData from '../../hooks/useData';
 import useApp from '../../hooks/useApp';
 import usePreloader from '../../hooks/usePreloader';
+import useToast from '../../hooks/useToast';
 // import usePreloader from '../../hooks/usePreloader';
+
+import toastConfig from '../Toast/config';
+
+// const { position } = toastConfig.label;
+// const toastStartDelay = 120000;
+// const toastStartDelay = 2000;
 
 const Layout = () => {
   const data = useData();
   const app = useApp();
   const { startPreloader } = usePreloader();
-  const location = useLocation();
 
   useLayoutEffect(() => {
     app.isPending() && startPreloader();
-  }, [location.pathname]);
+  }, [app.status]);
 
   /*
   const { addToast } = useToast();
 
   useEffect(() => {
-    setTimeout(() => addToast(position), toastStartDelay);
+    const timeout = setTimeout(() => addToast(position), toastStartDelay);
     // setTimeout(() => addToast('error'), 15000); // *
+    return () => clearTimeout(timeout);
   }, []);
-  */
+  // */
 
-  const { modal, RenderModal } = useModals();
+  const { RenderModal, isCertificateModal } = useModals();
   const headerRef = useScrollToTop();
 
-  // useEffect(() => content && setData(content), [content]);
+  if (!data) return null;
 
-  if (!data || app.isPending()) return <RenderModal />;
-
-  const wrapperStyle = `${s.wrapper} ${modal ? '' : s.scroll}`;
+  const scrollStyle = isCertificateModal ? s.hidden : s.scroll;
+  const wrapperStyle = `${s.wrapper} ${scrollStyle}`;
 
   return (
     <div className={wrapperStyle}>
@@ -51,17 +57,19 @@ const Layout = () => {
           <Header {...{ data }} />
         </header>
 
-        <main>
-          {/* <ToastProvider> */}
-          <Outlet />
-          {/* </ToastProvider> */}
-        </main>
+        {!app.isPending() && (
+          <>
+            <main>
+              <Outlet />
+            </main>
 
-        <footer>
-          <Footer {...{ data }} />
-        </footer>
+            <footer>
+              <Footer {...{ data }} />
+            </footer>
+          </>
+        )}
 
-        {/* <RenderModal /> */}
+        <RenderModal />
       </div>
     </div>
   );

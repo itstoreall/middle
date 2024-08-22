@@ -21,7 +21,7 @@ export const PreloaderContext = createContext<Context>(initContext);
 export const PreloaderProvider: FC<ChildrenProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { openModal, closeModal, ModaContentEnum } = useModal();
+  const { openModal, closeModal, ModalContentEnum } = useModal();
 
   // ---
 
@@ -29,11 +29,12 @@ export const PreloaderProvider: FC<ChildrenProps> = ({ children }) => {
 
   const startPreloader = (delay = 0) => {
     handleLoading(true);
-    setTimeout(() => openModal(ModaContentEnum.PRELOADER), delay);
+    setTimeout(() => openModal(ModalContentEnum.PRELOADER), delay);
   };
 
   const stopPreloader = (delay = 0) => {
     handleLoading(false);
+    console.log('stopPreloader');
     setTimeout(() => closeModal(), delay);
   };
 

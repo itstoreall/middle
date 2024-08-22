@@ -1,20 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // import { useLayoutEffect } from 'react';
 // import usePreloader from '../../../hooks/usePreloader';
+import useApp from '../../../hooks/useApp';
 import useData from '../../../hooks/useData';
 import ProjectList from './ProjectList';
 import s from './Portfolio.module.scss';
-import useApp from '../../../hooks/useApp';
 
 const PortfolioContent = () => {
-  // const { isLoading, startPreloader } = usePreloader();
-
   const data = useData();
   const app = useApp();
-
-  // useLayoutEffect(() => {
-  //   startPreloader();
-  // }, []);
 
   if (!data || app.isPending()) return null;
 

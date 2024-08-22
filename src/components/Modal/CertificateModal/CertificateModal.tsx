@@ -4,7 +4,7 @@ import Slider from './Slider';
 import s from './CertificateModal.module.scss';
 
 const CertificateModal = () => {
-  const { CERTIFICATE } = useModal().ModaContentEnum;
+  const { CERTIFICATE } = useModal().ModalContentEnum;
 
   return (
     <CommonModal customStyle={CERTIFICATE}>

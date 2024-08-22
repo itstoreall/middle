@@ -1,4 +1,4 @@
-export enum ModalContent {
+export enum ModalContentEnum {
   CERTIFICATE = 'certificate',
   PRELOADER = 'preloader'
 }

@@ -5,6 +5,8 @@ export type ChildrenProps = { children: ReactNode };
 
 export type ButtonEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>;
 
+export type LinkEvent = React.MouseEvent<HTMLAnchorElement, MouseEvent>;
+
 export type SwipeEvent = React.TouchEvent<HTMLDivElement>;
 
 export type DataProps = { data: Data };

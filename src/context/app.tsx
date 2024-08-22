@@ -40,6 +40,8 @@ export const AppProvider: FC<ChildrenProps> = ({ children }) => {
     setTimeout(() => handleStatus(StatusEnum.INIT), 1800);
   }, [location]);
 
+  console.log('App status:', status);
+
   const handleStatus = (status: StatusEnum) => setStatus(status);
   const isInit = () => status === StatusEnum.INIT;
   const isPending = () => status === StatusEnum.PENDING;

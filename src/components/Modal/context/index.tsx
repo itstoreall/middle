@@ -1,29 +1,47 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { createContext, useEffect, useMemo, useState } from 'react';
-import { ModalContextProps, ModalsProviderProps } from '../types';
-import { ModalContent } from '../enum';
+import { createContext, useMemo, useState } from 'react';
+import * as gt from '../../../types/global';
+import { ModalContentEnum } from '../enum';
 import RenderModal from '../index';
 
-const ModalsContext = createContext<ModalContextProps | undefined>(undefined);
+type ModalContextProps = {
+  modal: ModalContentEnum | null;
+  openModal: (val: ModalContentEnum) => void;
+  isClosing: boolean;
+  closeModal(): void;
+  ModalContentEnum: typeof ModalContentEnum;
+  RenderModal: () => JSX.Element;
+  isCertificateModal: boolean;
+  isPreloaderModal: boolean;
+};
 
-export const ModalsProvider = ({ children }: ModalsProviderProps) => {
-  const [modal, setModal] = useState<ModalContent | null>(null);
+const initContext: ModalContextProps = {
+  modal: null,
+  openModal: () => {},
+  isClosing: false,
+  closeModal: () => {},
+  ModalContentEnum: ModalContentEnum,
+  RenderModal: () => <></>,
+  isCertificateModal: false,
+  isPreloaderModal: false
+};
+
+const ModalContext = createContext<ModalContextProps>(initContext);
+
+export const ModalProvider = ({ children }: gt.ChildrenProps) => {
+  const [modal, setModal] = useState<ModalContentEnum | null>(null);
   const [isClosing, setIsClosing] = useState(false);
 
-  const isDisallowedClose = modal === ModalContent.PRELOADER;
+  console.log('modal', modal);
 
-  useEffect(() => {
-    document.body.style.overflow = modal ? 'unset' : 'hidden';
-  }, [modal]);
+  const isCertificateModal = modal === ModalContentEnum.CERTIFICATE;
+  const isPreloaderModal = modal === ModalContentEnum.PRELOADER;
 
   // ---
 
-  const isCertificateModal = modal === ModalContent.CERTIFICATE;
-
-  const openModal = (val: ModalContent) => setModal(val);
+  const openModal = (val: ModalContentEnum) => setModal(val);
 
   const closeModal = () => {
-    if (isDisallowedClose) return;
     setIsClosing(true);
     setTimeout(() => {
       setModal(null);
@@ -37,15 +55,16 @@ export const ModalsProvider = ({ children }: ModalsProviderProps) => {
       openModal,
       isClosing,
       closeModal,
-      ModaContentEnum: ModalContent,
+      ModalContentEnum,
       RenderModal,
-      isCertificateModal
+      isCertificateModal,
+      isPreloaderModal
     };
   }, [modal, isClosing]);
 
   return (
-    <ModalsContext.Provider value={values}>{children}</ModalsContext.Provider>
+    <ModalContext.Provider value={values}>{children}</ModalContext.Provider>
   );
 };
 
-export default ModalsContext;
+export default ModalContext;

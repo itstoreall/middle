@@ -3,14 +3,16 @@ import CertificateModal from './CertificateModal';
 import PreloaderModal from './PreloaderModal';
 
 const RenderModal = () => {
-  const { modal, ModaContentEnum } = useModal();
-  return modal === ModaContentEnum.CERTIFICATE ? (
-    <CertificateModal />
-  ) : modal === ModaContentEnum.PRELOADER ? (
-    <PreloaderModal />
-  ) : (
-    <></>
-  );
+  const { isCertificateModal, isPreloaderModal } = useModal();
+
+  switch (true) {
+    case isCertificateModal:
+      return <CertificateModal />;
+    case isPreloaderModal:
+      return <PreloaderModal />;
+    default:
+      return <></>;
+  }
 };
 
 export default RenderModal;

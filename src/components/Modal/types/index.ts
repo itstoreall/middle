@@ -1,19 +1,4 @@
 import { ReactNode } from 'react';
-import { ModalContent } from '../enum';
-
-export type ModalsProviderProps = {
-  children: ReactNode;
-};
-
-export type ModalContextProps = {
-  modal: ModalContent | null;
-  openModal: (val: ModalContent) => void;
-  isClosing: boolean;
-  closeModal(): void;
-  ModaContentEnum: typeof ModalContent;
-  RenderModal: () => JSX.Element;
-  isCertificateModal: boolean;
-};
 
 export type CloseButtonProps = { closeModal: () => void };
 

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AppProvider } from '../context/app';
-import { ModalsProvider } from '../components/Modal/context';
+import { ModalProvider } from '../components/Modal/context';
 import { PreloaderProvider } from '../context/preloader';
 import * as gc from '../config/global';
 import Layout from '../components/Layout';
@@ -26,7 +26,7 @@ const AppRoutes = () => {
     <HashRouter>
       <DataProvider {...{ data }}>
         <AppProvider>
-          <ModalsProvider>
+          <ModalProvider>
             <ToastProvider>
               <PreloaderProvider>
                 <Routes>
@@ -37,7 +37,7 @@ const AppRoutes = () => {
                 </Routes>
               </PreloaderProvider>
             </ToastProvider>
-          </ModalsProvider>
+          </ModalProvider>
         </AppProvider>
       </DataProvider>
     </HashRouter>
