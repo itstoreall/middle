@@ -6,9 +6,9 @@ import * as t from '../components/Toast/types';
 import ToastContainer from '../components/Toast/ToastContainer';
 
 const initContext = {
-  addToast: () => console.log(),
-  updateToastContent: () => console.log(),
-  removeToast: () => console.log()
+  addToast: () => {},
+  updateToastContent: () => {},
+  removeToast: () => {}
 };
 
 export const ToastContext = createContext<t.ToastContext>(initContext);

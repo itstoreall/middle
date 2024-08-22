@@ -19,7 +19,7 @@ type Context = {
 
 const initContext = {
   status: StatusEnum.INIT,
-  set: () => console.log(),
+  set: () => {},
   isInit: () => false,
   isPending: () => false,
   isActive: () => false,
@@ -39,8 +39,6 @@ export const AppProvider: FC<ChildrenProps> = ({ children }) => {
     handleStatus(StatusEnum.PENDING);
     setTimeout(() => handleStatus(StatusEnum.INIT), 1800);
   }, [location]);
-
-  console.log('App status:', status);
 
   const handleStatus = (status: StatusEnum) => setStatus(status);
   const isInit = () => status === StatusEnum.INIT;

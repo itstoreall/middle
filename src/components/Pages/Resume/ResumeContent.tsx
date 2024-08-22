@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// import { useLayoutEffect } from 'react';
+import useApp from '../../../hooks/useApp';
 import useData from '../../../hooks/useData';
 import SocialButtons from './SocialButtons';
 import SkillList from './SkillList';
@@ -10,21 +9,12 @@ import EmploymentBlock from './EmploymentBlock';
 import EducationBlock from './EducationBlock';
 import CertificateBlock from './CertificateBlock';
 import s from './Resume.module.scss';
-import useApp from '../../../hooks/useApp';
-// import usePreloader from '../../../hooks/usePreloader';
 
 const ResumeContent = () => {
-  // const { isLoading, startPreloader } = usePreloader();
-
   const data = useData();
   const app = useApp();
 
-  // useLayoutEffect(() => {
-  //   startPreloader();
-  // }, []);
-
   if (!data || app.isPending()) return null;
-  // if (!data) return null;
 
   const { author, skills, stack, soft, about } = data;
   const { employment, education, certificates } = data;

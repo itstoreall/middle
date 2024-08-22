@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// import { useLayoutEffect } from 'react';
-// import usePreloader from '../../../hooks/usePreloader';
 import useApp from '../../../hooks/useApp';
 import useData from '../../../hooks/useData';
 import ProjectList from './ProjectList';

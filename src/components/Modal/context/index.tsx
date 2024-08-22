@@ -1,19 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useMemo, useState } from 'react';
-import * as gt from '../../../types/global';
 import { ModalContentEnum } from '../enum';
+import { ModalContextProps } from '../types';
+import * as gt from '../../../types/global';
 import RenderModal from '../index';
-
-type ModalContextProps = {
-  modal: ModalContentEnum | null;
-  openModal: (val: ModalContentEnum) => void;
-  isClosing: boolean;
-  closeModal(): void;
-  ModalContentEnum: typeof ModalContentEnum;
-  RenderModal: () => JSX.Element;
-  isCertificateModal: boolean;
-  isPreloaderModal: boolean;
-};
 
 const initContext: ModalContextProps = {
   modal: null,

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useEffect, useState } from 'react';
 import useData from '../../hooks/useData';
 import { ToastProps } from './types';
@@ -6,6 +7,8 @@ import ReactIcon from '../../assets/icons/ReactIcon';
 import s from './Toast.module.scss';
 
 const SKIP_TIME_KEY = 'middle_toast_skip_time';
+const showDelay = 24 * 60 * 60 * 1000; // one day
+// const showDelay = 30 * 1000; // 30 sec
 const autoCloseDelay = 120000;
 
 const Toast: FC<ToastProps> = ({ msg, label, updateContent, onClose }) => {
@@ -18,7 +21,7 @@ const Toast: FC<ToastProps> = ({ msg, label, updateContent, onClose }) => {
 
   useEffect(() => {
     const timestamp = localStorage.getItem(SKIP_TIME_KEY);
-    timestamp && handleShow(+timestamp);
+    timestamp ? handleShow(+timestamp) : setNewTimestamp();
   }, []);
 
   // /*
@@ -31,11 +34,15 @@ const Toast: FC<ToastProps> = ({ msg, label, updateContent, onClose }) => {
   }, [onClose]);
   // */
 
+  const setNewTimestamp = () => {
+    const timestamp = new Date().getTime().toString();
+    localStorage.setItem(SKIP_TIME_KEY, timestamp);
+  };
+
   const handleShow = (time: number) => {
     const now = new Date().getTime();
-    const oneDay = 24 * 60 * 60 * 1000;
-    const isBlocked = now - +time < oneDay;
-    isBlocked && setShouldShow(false);
+    const isBlocked = now - +time < showDelay;
+    isBlocked ? setShouldShow(false) : setNewTimestamp();
   };
 
   const handleConent = () => {
@@ -44,12 +51,8 @@ const Toast: FC<ToastProps> = ({ msg, label, updateContent, onClose }) => {
     updateContent(msg);
   };
 
-  const handleClose = () => onClose();
-
-  const handleSkip = () => {
+  const handleClose = () => {
     setIsClosing(true);
-    const timestamp = new Date().getTime().toString();
-    localStorage.setItem(SKIP_TIME_KEY, timestamp);
     setTimeout(onClose, 500);
   };
 
@@ -94,6 +97,7 @@ const Toast: FC<ToastProps> = ({ msg, label, updateContent, onClose }) => {
                 )
               )}
         </div>
+
         <div className={s.buttonBlock}>
           <a
             href={data.message_linkedin_url}
@@ -111,11 +115,8 @@ const Toast: FC<ToastProps> = ({ msg, label, updateContent, onClose }) => {
               </button>
             )}
 
-            <button
-              className={s.close}
-              onClick={isInitContent ? handleSkip : handleClose}
-            >
-              {isInitContent ? 'Hide' : 'Close'}
+            <button className={s.close} onClick={handleClose}>
+              {'Close'}
             </button>
           </span>
         </div>
