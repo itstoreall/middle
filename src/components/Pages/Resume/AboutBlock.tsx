@@ -13,7 +13,7 @@ const AboutBlock = () => {
   return (
     <div className={s.aboutBlock}>
       <div className={s.thumb}>
-        <img src={avatar} alt={author} />
+        <img src={avatar} alt={author} loading='lazy' />
       </div>
 
       <div className={s.metaBlock}>
