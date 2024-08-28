@@ -12,8 +12,8 @@ type Context = {
 const initContext = {
   isLoading: false,
   // set: () => false,
-  startPreloader: () => console.log(),
-  stopPreloader: () => console.log()
+  startPreloader: () => {},
+  stopPreloader: () => {}
 };
 
 export const PreloaderContext = createContext<Context>(initContext);
@@ -34,7 +34,6 @@ export const PreloaderProvider: FC<ChildrenProps> = ({ children }) => {
 
   const stopPreloader = (delay = 0) => {
     handleLoading(false);
-    console.log('stopPreloader');
     setTimeout(() => closeModal(), delay);
   };
 

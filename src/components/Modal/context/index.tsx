@@ -22,8 +22,6 @@ export const ModalProvider = ({ children }: gt.ChildrenProps) => {
   const [modal, setModal] = useState<ModalContentEnum | null>(null);
   const [isClosing, setIsClosing] = useState(false);
 
-  console.log('modal', modal);
-
   const isCertificateModal = modal === ModalContentEnum.CERTIFICATE;
   const isPreloaderModal = modal === ModalContentEnum.PRELOADER;
 
