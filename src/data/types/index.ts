@@ -4,6 +4,10 @@ export type Author = {
   secondName: string;
   profession: string;
   level: string;
+  sublevel: {
+    isActive: boolean;
+    level: string;
+  };
 };
 
 export type Social = {

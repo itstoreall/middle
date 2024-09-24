@@ -19,7 +19,7 @@ const CloseModalButton = ({ closeModal }: CloseButtonProps) => (
 const Header = ({ data }: gt.DataProps) => {
   const { closeModal, isCertificateModal } = useModal();
 
-  const { level } = data.author;
+  const { level, sublevel } = data.author;
 
   const buttonHandler = () => {
     switch (isCertificateModal) {
@@ -35,6 +35,11 @@ const Header = ({ data }: gt.DataProps) => {
       <Container label={Label.PAGE}>
         <div className={s.headerContent}>
           <h1>{level}</h1>
+
+          {sublevel.isActive && (
+            <span className={s.sublevel}>{sublevel.level}</span>
+          )}
+
           <div className={s.buttonBlock}>
             <DownloadPDF url={data.resume_pdf_url} />
             {buttonHandler()}

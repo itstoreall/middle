@@ -5,6 +5,10 @@
     "secondName": "Stanislav",
     "profession": "Full Stack Developer",
     "level": "middle",
+    "sublevel": {
+      "isActive": true,
+      "level": "junior"
+    },
     "facebook": {
       "label": "facebook",
       "url": "https://www.facebook.com/SerhiiStanislav"

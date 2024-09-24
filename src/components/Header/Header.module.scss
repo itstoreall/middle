@@ -18,6 +18,21 @@
       font-weight: 700;
     }
 
+    > span.sublevel {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      padding: 5px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background-color: $selectMiddle;
+      border-radius: 2px;
+      transform: rotate(-2.5deg);
+      @include box-shadow-offset(3px, $black);
+    }
+
     .buttonBlock {
       @extend %extends-flex-y-center;
       gap: 10px;
