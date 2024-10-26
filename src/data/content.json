@@ -196,6 +196,23 @@
     "subtitle": "Collection of some of my projects"
   },
   "projects": {
+    "hero": {
+      "label": "hero",
+      "set": [
+        {
+          "title": "Test technical task",
+          "description": [
+            "Application for user accounting by department (only desktop version). The functionality allows you to add, delete, edit and filter user information. All data is collected on the client side, using local storage."
+          ],
+          "url": "https://itstoreall.github.io/test-task-01",
+          "src_ui": "https://github.com/itstoreall/test-task-01",
+          "src_api": "",
+          "img": "hero_01",
+          "ui_password": false,
+          "status": true
+        }
+      ]
+    },
     "frontend": {
       "label": "frontend",
       "set": [

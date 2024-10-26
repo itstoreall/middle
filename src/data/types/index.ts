@@ -91,20 +91,24 @@ export type Portfolio = {
   subtitle: string;
 };
 
+export type ProjectSetIem = {
+  title: string;
+  description?: string[];
+  url: string;
+  src_ui: string;
+  src_api: string;
+  img: string;
+  ui_password: boolean;
+  status: boolean;
+};
+
 export type Project = {
   label: string;
-  set: {
-    title: string;
-    url: string;
-    src_ui: string;
-    src_api: string;
-    img: string;
-    ui_password: boolean;
-    status: boolean;
-  }[];
+  set: ProjectSetIem[];
 };
 
 export type Projects = {
+  hero: Project;
   frontend: Project;
   fullstack: Project;
   backend: Project;

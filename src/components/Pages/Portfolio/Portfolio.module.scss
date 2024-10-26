@@ -25,6 +25,7 @@ section.heroSection {
 
 section.projectSection {
   padding-bottom: 30px;
+  user-select: none;
 
   > h2.title {
     font-size: 26px;
@@ -37,107 +38,135 @@ section.projectSection {
 
   // ------ Projects:
 
-  &.projectSection {
-    user-select: none;
+  &.hero {
+    > h2.title {
+      text-transform: none;
+    }
 
-    > ul.projectList {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 50px;
-
+    ul.projectList {
       @include media-screen-orientation('min', $tablet) {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+
+        > li {
+          display: grid;
+          grid-template-columns: 1.93fr 1fr;
+
+          .imageBlock {
+            margin-bottom: 0;
+          }
+
+          .metaBlock {
+            padding-left: 20px;
+          }
+        }
       }
+    }
+  }
 
-      > li {
-        .imageBlock {
-          min-height: 146px;
-          margin-bottom: 15px;
+  > ul.projectList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
 
-          .thumb {
-            overflow: hidden;
-            @include box-shadow-offset(3px, $black);
-            border: 1px solid $darkGrey;
-            border-radius: 2px;
+    @include media-screen-orientation('min', $tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
-            &.empty {
-              @extend %extends-flex-center;
-              // min-height: 134px;
-            }
+    > li {
+      .imageBlock {
+        min-height: 146px;
+        margin-bottom: 15px;
+
+        .thumb {
+          overflow: hidden;
+          @include box-shadow-offset(3px, $black);
+          border: 1px solid $darkGrey;
+          border-radius: 2px;
+
+          &.empty {
+            @extend %extends-flex-center;
+            // min-height: 134px;
+          }
+
+          > img {
+            display: block;
+            width: 100%;
+          }
+
+          .emptyBlock {
+            @extend %extends-flex-center;
+            position: relative;
 
             > img {
               display: block;
               width: 100%;
+              opacity: 0;
             }
 
-            .emptyBlock {
-              @extend %extends-flex-center;
-              position: relative;
+            > span.logoBox {
+              display: flex;
+              position: absolute;
+              gap: 15px;
 
-              > img {
-                display: block;
-                width: 100%;
-                opacity: 0;
-              }
-
-              > span.logoBox {
-                display: flex;
-                position: absolute;
-                gap: 15px;
-
-                > svg {
-                  width: 40px;
-                  height: 40px;
-                }
+              > svg {
+                width: 40px;
+                height: 40px;
               }
             }
           }
         }
+      }
 
-        .metaBlock {
+      .metaBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        > h3.title {
+          font-weight: 600;
+          color: $middleGrey;
+        }
+
+        > p.descriptionLine {
+          max-width: 480px;
+          font-size: 14px;
+          line-height: 1.4;
+          color: $middleGrey;
+        }
+
+        > span.buttonBlock {
           display: flex;
-          flex-direction: column;
-          gap: 15px;
+          gap: 10px;
 
-          > h3.title {
-            font-weight: 600;
-            color: $middleGrey;
-          }
+          > a {
+            @extend %extends-flex-center;
+            gap: 2px;
+            min-width: 65px;
+            height: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $bg;
+            background-color: $middleGrey;
+            border-radius: 15px;
+            transition: $ease03s;
 
-          > span.buttonBlock {
-            display: flex;
-            gap: 10px;
+            @include media-screen-orientation('max', $tablet - 0.1) {
+              padding-top: 1px;
+            }
 
-            > a {
-              @extend %extends-flex-center;
-              gap: 2px;
-              min-width: 65px;
-              height: 20px;
-              font-size: 10px;
-              font-weight: 700;
-              text-transform: uppercase;
-              color: $bg;
-              background-color: $middleGrey;
-              border-radius: 15px;
-              transition: $ease03s;
+            &.locked {
+              background-color: $error;
+            }
 
-              @include media-screen-orientation('max', $tablet - 0.1) {
-                padding-top: 1px;
-              }
+            &:hover {
+              background-color: $lightGrey;
+            }
 
-              &.locked {
-                background-color: $error;
-              }
-
-              &:hover {
-                background-color: $lightGrey;
-              }
-
-              > svg {
-                width: 10px;
-                height: 10px;
-              }
+            > svg {
+              width: 10px;
+              height: 10px;
             }
           }
         }

@@ -1,6 +1,7 @@
 import useData from '../../../hooks/useData';
 import { ButtonProps, ImageProps } from './types';
-import { ProjectData, Projects } from '../../../data/types';
+import { ProjectData, Projects, ProjectSetIem } from '../../../data/types';
+import hero_01 from '../../../assets/images/hero_01.png';
 import frontend_01 from '../../../assets/images/frontend_01.png';
 import frontend_02 from '../../../assets/images/frontend_02.png';
 import frontend_03 from '../../../assets/images/frontend_03.png';
@@ -15,6 +16,11 @@ import ApolloIcon from '../../../assets/icons/ApolloIcon';
 import CodeIcon from '../../../assets/icons/CodeIcon';
 import LockIcon from '../../../assets/icons/LockIcon';
 import s from './Portfolio.module.scss';
+
+type MetaInformationProps = {
+  project: ProjectSetIem;
+  isHero: boolean;
+};
 
 const Image = ({ label, image, title, logo, data }: ImageProps) => {
   const { backend } = data.projects;
@@ -57,6 +63,20 @@ const Image = ({ label, image, title, logo, data }: ImageProps) => {
   );
 };
 
+const MetaInformation = ({ project, isHero }: MetaInformationProps) => {
+  return isHero ? (
+    <>
+      {project.description?.map((line, idx) => (
+        <p key={idx} className={s.descriptionLine}>
+          {line}
+        </p>
+      ))}
+    </>
+  ) : (
+    <h3 className={s.title}>{project.title}</h3>
+  );
+};
+
 const Button = ({ url, title, isLock }: ButtonProps) => {
   if (!url) return null;
 
@@ -76,6 +96,7 @@ const ProjectList = ({ label }: { label: string }) => {
   if (!data) return null;
 
   const images = [
+    hero_01,
     frontend_01,
     frontend_02,
     frontend_03,
@@ -86,7 +107,8 @@ const ProjectList = ({ label }: { label: string }) => {
   ];
 
   const { projects } = data as ProjectData;
-  const { backend } = data.projects;
+  const { hero, backend } = data.projects;
+  const isHero = label === hero.label;
 
   return (
     <ul className={s.projectList}>
@@ -112,7 +134,8 @@ const ProjectList = ({ label }: { label: string }) => {
             </div>
 
             <div className={s.metaBlock}>
-              <h3 className={s.title}>{el.title}</h3>
+              <MetaInformation isHero={isHero} project={el} />
+
               <span className={s.buttonBlock}>
                 {el.url && (
                   <Button url={el.url} title={'view'} isLock={isLockedUI} />

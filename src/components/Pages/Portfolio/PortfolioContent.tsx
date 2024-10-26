@@ -10,7 +10,7 @@ const PortfolioContent = () => {
   if (!data || app.isPending()) return null;
 
   const { portfolio, projects } = data;
-  const { frontend, fullstack, backend } = projects;
+  const { hero, frontend, fullstack, backend } = projects;
 
   return (
     <>
@@ -18,6 +18,13 @@ const PortfolioContent = () => {
         <h1 className={s.portpolio}>{portfolio.title}</h1>
         <h2 className={s.subtitle}>{portfolio.subtitle}</h2>
       </section>
+
+      {projects.hero.set.length ? (
+        <section className={`${s.projectSection} ${s[hero.label]}`}>
+          <h2 className={s.title}>{projects.hero.set[0].title}</h2>
+          <ProjectList label={hero.label} />
+        </section>
+      ) : null}
 
       {projects.frontend.set.length ? (
         <section className={s.projectSection}>
