@@ -6,7 +6,7 @@
     "profession": "Full Stack Developer",
     "level": "middle",
     "sublevel": {
-      "isActive": true,
+      "isActive": false,
       "level": "junior"
     },
     "facebook": {
