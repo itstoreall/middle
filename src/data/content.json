@@ -27,9 +27,9 @@
     "set": [
       { "label": "frontend", "percent": 85 },
       { "label": "backend", "percent": 60 },
-      { "label": "database", "percent": 30 },
-      { "label": "blockchain", "percent": 40 },
-      { "label": "ai", "percent": 55 },
+      { "label": "database", "percent": 25 },
+      { "label": "blockchain", "percent": 35 },
+      { "label": "ai", "percent": 45 },
       { "label": "server", "percent": 20 }
     ]
   },
@@ -43,17 +43,19 @@
             "react",
             "typescript",
             "sass",
+            "tanstack react-query",
             "axios",
             "apollo client",
+            "react-hook-form",
             "socket.io-client"
           ],
           "familiar": [
             "next",
             "next-themes",
+            "next-auth",
             "styled components",
             "webpack",
-            "react-google-recaptcha",
-            "tanstack react-query"
+            "react-google-recaptcha"
           ]
         }
       },
@@ -62,7 +64,9 @@
         "set": {
           "often": [
             "express",
+            "nest",
             "sequelize",
+            "prisma",
             "graphql",
             "mongoose",
             "socket.io",
@@ -97,7 +101,7 @@
       {
         "label": "server",
         "set": {
-          "often": ["vercel", "heroku"],
+          "often": ["vercel", "neon", "heroku"],
           "familiar": ["aws", "netlify"]
         }
       }
@@ -123,7 +127,7 @@
     "text": [
       "Hello! I'm",
       "With over three years of experience in professional commercial development, specialize in web2, web3 applications, and AI API integration. Depending on the project, I can function as a team player or an independent combat unit, handling tasks in JavaScript for both front-end and back-end development.",
-      "Key technologies: React.js, Node.js, and TypeScript."
+      "Key techs: React.js, Node.js, SASS, TypeScript"
     ]
   },
   "employment": {
@@ -133,7 +137,7 @@
         "position": "Full Stack Developer",
         "company": "Dexola",
         "start": "November 2022",
-        "end": "",
+        "end": "October 2024",
         "description": "Integration of AI models (Anthropic-AI and OpenAI) into blockchain web applications"
       },
       {
