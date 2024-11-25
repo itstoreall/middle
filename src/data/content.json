@@ -272,7 +272,7 @@
         },
         {
           "title": "Blog with an admin panel",
-          "url": "https://esoterrium.space",
+          "url": "",
           "src_ui": "https://github.com/itstoreall/astraia",
           "src_api": "https://github.com/itstoreall/magic-api-vercel",
           "img": "fullstack_02",
