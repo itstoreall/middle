@@ -6,7 +6,7 @@
     "profession": "Full Stack Developer",
     "level": "middle",
     "sublevel": {
-      "isActive": false,
+      "isActive": true,
       "level": "junior"
     },
     "facebook": {
@@ -26,10 +26,10 @@
     "label": "skills",
     "set": [
       { "label": "frontend", "percent": 85 },
-      { "label": "backend", "percent": 60 },
+      { "label": "backend", "percent": 50 },
       { "label": "database", "percent": 25 },
       { "label": "blockchain", "percent": 35 },
-      { "label": "ai", "percent": 45 },
+      { "label": "ai", "percent": 40 },
       { "label": "server", "percent": 20 }
     ]
   },
@@ -262,10 +262,10 @@
       "label": "fullstack",
       "set": [
         {
-          "title": "Сhat with AI about Norway",
-          "url": "https://www.thisisnorway.info",
-          "src_ui": "",
-          "src_api": "",
+          "title": "Esoteric community MVP site",
+          "url": "https://www.esoterrium.space",
+          "src_ui": "https://github.com/itstoreall/esoterrium",
+          "src_api": "https://github.com/itstoreall/esoterrium",
           "img": "fullstack_01",
           "ui_password": false,
           "status": true

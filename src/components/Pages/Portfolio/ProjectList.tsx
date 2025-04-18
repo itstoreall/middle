@@ -6,7 +6,7 @@ import frontend_01 from '../../../assets/images/frontend_01.png';
 import frontend_02 from '../../../assets/images/frontend_02.png';
 import frontend_03 from '../../../assets/images/frontend_03.png';
 import frontend_04 from '../../../assets/images/frontend_04.png';
-import fullstack_01 from '../../../assets/images/fullstack_01.png';
+import fullstack_01 from '../../../assets/images/fullstack_01.jpg';
 import fullstack_02 from '../../../assets/images/fullstack_02.png';
 import fullstack_03 from '../../../assets/images/fullstack_03.png';
 import empty_white from '../../../assets/images/empty_white.png';
