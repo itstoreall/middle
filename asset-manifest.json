@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/middle/static/css/main.f390d639.css",
-    "main.js": "/middle/static/js/main.66a60205.js",
+    "main.js": "/middle/static/js/main.3ede4e4e.js",
     "static/media/avatar.jpg": "/middle/static/media/avatar.c4a6f8cb00532a2331ad.jpg",
     "static/media/certificate_goit_fullstack.jpg": "/middle/static/media/certificate_goit_fullstack.1f039d9dd19abe2eaa3f.jpg",
     "static/media/certificate_diia_blockchain_modul_3.jpg": "/middle/static/media/certificate_diia_blockchain_modul_3.9d89115fb0432215b78a.jpg",
@@ -10,7 +10,7 @@
     "static/media/certificate_diia_blockchain_modul_2.jpg": "/middle/static/media/certificate_diia_blockchain_modul_2.ec673a9d519ce66e8d0c.jpg",
     "static/media/frontend_02.png": "/middle/static/media/frontend_02.e22cdea0fe8faf959962.png",
     "static/media/frontend_04.png": "/middle/static/media/frontend_04.b71ba73cab6456b53b6e.png",
-    "static/media/fullstack_01.png": "/middle/static/media/fullstack_01.fc690d3a07b614106a08.png",
+    "static/media/fullstack_01.jpg": "/middle/static/media/fullstack_01.13a56ddc630a7d5ac587.jpg",
     "static/media/fullstack_03.png": "/middle/static/media/fullstack_03.f4aa934abf258d34c887.png",
     "static/media/fullstack_02.png": "/middle/static/media/fullstack_02.aa084e4c5dc25af0a6ab.png",
     "static/media/hero_01.png": "/middle/static/media/hero_01.004600076664910dbf42.png",
@@ -18,10 +18,10 @@
     "static/media/frontend_01.png": "/middle/static/media/frontend_01.5c40c8ec32f91e52983b.png",
     "index.html": "/middle/index.html",
     "main.f390d639.css.map": "/middle/static/css/main.f390d639.css.map",
-    "main.66a60205.js.map": "/middle/static/js/main.66a60205.js.map"
+    "main.3ede4e4e.js.map": "/middle/static/js/main.3ede4e4e.js.map"
   },
   "entrypoints": [
     "static/css/main.f390d639.css",
-    "static/js/main.66a60205.js"
+    "static/js/main.3ede4e4e.js"
   ]
 }
